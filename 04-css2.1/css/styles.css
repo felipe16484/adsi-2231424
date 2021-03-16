@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(57, 3, 158);
+}
+article {
+    background-color: #7700ff;
+    color: #350072 ;
+    font-family: Tahoma;
+    margin: 100px auto;
+    width: 480px;
+    padding: 20px;
+}
+article h1 {
+    text-align: center;
+}
+article p {
+    text-align: justify;
+}
