@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <h2>Square</h2>
+    <canvas id="square"></canvas>
+    <h2>Rectangle</h2>
+    <canvas id="rectangle"></canvas>
+    <h2>Triangle</h2>
+    <canvas id="triangle"></canvas>
+    <h2>Circle</h2>
+    <canvas id="circle"></canvas>
+    <h2>Heart</h2>
+    <canvas id="heart"></canvas>
+    <h2>Text</h2>
+    <canvas id="text"></canvas>
+
+
+    
+    <script>
+        /* Square*/
+       var canvas = document.getElementById('square');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.fillRect(0,0,100, 100);
+        /* Rectangle */
+       var canvas = document.getElementById('rectangle');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.fillRect(0,0,200, 100);
+       /* Triangle */
+       var canvas = document.getElementById('triangle');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.beginPath();
+       contxt.moveTo(10, 110);
+       contxt.lineTo(110, 10);
+       contxt.lineTo(210, 110);
+       contxt.fill();
+       /* Cicle */
+       var canvas = document.getElementById('circle');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.beginPath();
+       contxt.arc(60, 60, 60, 0, Math.PI*2, true);
+       contxt.closePath();
+       contxt.fill();
+       /* Heart */
+       var canvas = document.getElementById('heart');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.beginPath();
+        contxt.moveTo(75,40);
+        contxt.bezierCurveTo(75,37,70,25,50,25);
+        contxt.bezierCurveTo(20,25,20,62.5,20,62.5);
+        contxt.bezierCurveTo(20,80,40,102,75,120);
+        contxt.bezierCurveTo(110,102,130,80,130,62.5);
+        contxt.bezierCurveTo(130,62.5,130,25,100,25);
+        contxt.bezierCurveTo(85,25,75,37,75,40);
+        contxt.fill();
+        /* Text */
+        var canvas = document.getElementById('text');
+       var contxt = canvas.getContext('2d');
+       contxt.fillStyle = '#53aa88';
+       contxt.font = '60px Tahoma';
+       contxt.fillText('ADSI', 20, 80);
+    </script>
+
+</body>
+</html>
