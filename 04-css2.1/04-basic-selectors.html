@@ -1,40 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic Selectors</title>
-    <link rel="stylesheet" href="/04-css2.1/css/basic-selectors.css">
-</head>
-<body>
-
-    <section>
-
-        <h1> Basic Selectors <br><br>
-            <span>Example 1</span> <br><br>
-        </h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br><br>
-            <span>Example 2</span>
-        </p>
-
-        <br><br>
-        
-    </section>
-
-    <p class="destacado">Lorem ipsum dolor sit amet.</p><br><br>
-
-    <p>First Paragraph</p>
-    <p id="destacado">Second Paragraph</p>
-    <p>Third Paragraph</p> <br><br>
-
-    <div class="aviso">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem, ad.
-        <span class="especial">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, sapiente!
-        </span>
+    <style>
+      * {
+        border: 2px dotted coral;
+        margin: 10px;
+        padding: 10px;
+      }
+      h2 {
+        background-color: coral;
+      }
+      p span {
+        background-color: deepskyblue;
+        margin: 0px;
+        padding: 0px;
+      }
+      .highlight {
+        background-color: lightgreen;
+      }
+      #elem03 {
+        background-color: crimson;
+        color: white;
+      }
+      div.box p.first {
+        background-color: black;
+        color: silver;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Basic Selectors</h1>
+    <h2>Universal Selector: *</h2>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
+        maiores accusantium neque adipisci consequatur fuga aliquid laborum
+        velit, iure provident? Quis cumque illum at accusamus repellendus
+        debitis praesentium dolores nulla.
+      </p>
     </div>
-    
-
-</body>
+    <h2>Type/Label Selector: h2</h2>
+    <h2>Descending Selector: p span</h2>
+    <div>
+      <p>
+        <span> Lorem ipsum dolor </span> sit amet consectetur adipisicing elit.
+        Corrupti maiores accusantium neque adipisci consequatur fuga aliquid
+        laborum velit, iure provident? <span>Quis cumque illum</span> at
+        accusamus repellendus debitis praesentium dolores nulla.
+      </p>
+    </div>
+    <h2 class="highlight">Class Selector: .highlight</h2>
+    <h2>ID Selector: #elem03</h2>
+    <ol>
+      <li id="elem01">Element 1</li>
+      <li id="elem02">Element 2</li>
+      <li id="elem03">Element 3</li>
+      <li id="elem04">Element 4</li>
+      <li id="elem05">Element 5</li>
+    </ol>
+    <h2>Combine Selector: div.box p.first</h2>
+    <div class="box">
+      <p class="first">lorem</p>
+      <p>lorem</p>
+      <p>lorem</p>
+    </div>
+  </body>
 </html>
