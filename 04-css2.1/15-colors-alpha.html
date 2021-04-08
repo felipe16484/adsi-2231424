@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colors Alpha</title>
+    <style>
+      section.character {
+        background: url(imgs/Satoru\ Gojo.png) no-repeat center;
+        background-size: contain;
+        height: 500px;
+        margin: 50px auto;
+        width: 400px;
+      }
+      section.character div {
+        height: 166px;
+      }
+      section.character div.alpha1 {
+        background-color: rgba(256, 256, 0, 0.4);
+      }
+      section.character div.alpha2 {
+        background-color: hsla(240, 100%, 50%, 0.6);
+      }
+      section.character div.alpha3 {
+        background-color: #ff0000dd;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="character">
+      <div class="alpha1"></div>
+      <div class="alpha2"></div>
+      <div class="alpha3"></div>
+    </section>
+  </body>
+</html>
