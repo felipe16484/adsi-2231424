@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Repeat</title>
+    <style>
+      section {
+        background-image: url(imgs/50px.png);
+        border: 2px solid #777;
+        height: 1032px;
+        margin: 25px auto;
+        width: 1032px;
+      }
+      section h2 {
+        background-color: rgba(256, 256, 256, 0.6);
+        margin: 0px;
+        padding: 5px;
+        text-align: center;
+      }
+      section.br1 {
+        background-repeat: repeat;
+      }
+      section.br2 {
+        background-repeat: repeat-x;
+      }
+      section.br3 {
+        background-repeat: repeat-y;
+      }
+      section.br4 {
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="br1">
+      <h2>Background-Repeat: repeat</h2>
+    </section>
+    <section class="br2">
+      <h2>Background-Repeat: repeat-x</h2>
+    </section>
+    <section class="br3">
+      <h2>Background-Repeat: repeat-y</h2>
+    </section>
+    <section class="br4">
+      <h2>Background-Repeat: no-repeat</h2>
+    </section>
+  </body>
+</html>
