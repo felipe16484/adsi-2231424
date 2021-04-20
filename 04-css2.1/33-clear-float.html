@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear Float</title>
+    <style>
+      main {
+        margin: 40px auto;
+        width: 400px;
+      }
+      section.bigbox {
+        border: 2px solid #777;
+        padding: 0px 8px;
+      }
+      section.bigbox img {
+        float: left;
+      }
+      section.bigbox p {
+        border: 1px solid #777;
+      }
+      section.bigbox p.clear {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>Float Position in the Image</h2>
+      <section class="bigbox">
+        <img src="imgs/50px.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio
+          adipisci inventore, ad doloribus molestias. In dolorem sequi iste
+          corporis voluptate consequatur repellat eaque rem voluptatem
+          excepturi, adipisci cumque voluptatum!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+          blanditiis praesentium voluptatum libero aut tenetur maiores facilis
+          aliquid, unde esse necessitatibus quas, inventore vitae temporibus
+          repellat amet aspernatur qui labore.
+        </p>
+      </section>
+      <h2>Paragraph 2 with clear</h2>
+      <section class="bigbox">
+        <img src="imgs/50px.png" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde odio
+          adipisci inventore, ad doloribus molestias. In dolorem sequi iste
+          corporis voluptate consequatur repellat eaque rem voluptatem
+          excepturi, adipisci cumque voluptatum!
+        </p>
+        <p class="clear">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque
+          blanditiis praesentium voluptatum libero aut tenetur maiores facilis
+          aliquid, unde esse necessitatibus quas, inventore vitae temporibus
+          repellat amet aspernatur qui labore.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

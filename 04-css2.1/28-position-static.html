@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Position Static</title>
+    <style>
+      main {
+        margin: 40px auto;
+        width: 400px;
+      }
+      section.bigbox {
+        border: 2px solid #777;
+        padding: 0px 8px;
+      }
+      section.bigbox div {
+        border: 1px solid #777;
+        margin: 10px 0px;
+        padding: 8px;
+      }
+      section.bigbox div.box1 {
+        height: 20px;
+        text-align: center;
+      }
+      section.bigbox div.box2 {
+        height: 10px;
+        text-align: center;
+        line-height: 0px;
+      }
+      section.bigbox div.box3 {
+        height: 30px;
+        text-align: center;
+      }
+      section.bigbox div.box-dashed {
+        border-style: dashed;
+        padding: 16px 8px;
+      }
+      section.bigbox div.box-dashed a {
+        border: 1px solid #777;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h3>Normal Position in Block Elements</h3>
+      <section class="bigbox">
+        <div class="box1">Block Element</div>
+        <div class="box2">Block Element</div>
+        <div class="box3">Block Element</div>
+      </section>
+      <h3>Normal Position in Block Elements</h3>
+      <section class="bigbox">
+        <div class="box-dashed">
+          <a href="#">In Line Element</a>
+          <a href="#">Other In Line Element</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
