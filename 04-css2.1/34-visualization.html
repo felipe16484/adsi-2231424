@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualization (Display/Visbility)</title>
+    <style>
+      main {
+        margin: 40px auto;
+        width: 448px;
+      }
+      main section {
+        border: 1px solid #777;
+        display: inline-block;
+        margin-bottom: 20px;
+        padding: 10px;
+        padding-bottom: 2px;
+        width: 200px;
+      }
+      main section h3 {
+        text-align: center;
+        margin: 0px;
+        margin-bottom: 10px;
+        padding: 0px;
+      }
+      main section div {
+        border: 1px solid #777;
+        display: inline-block;
+        font-size: 2em;
+        height: 42px;
+        margin-bottom: 8px;
+        padding: 10px;
+        text-align: center;
+        width: 42px;
+      }
+      main section div.dnone {
+        display: none;
+      }
+      main section div.vhidden {
+        visibility: hidden;
+      }
+      /*  */
+      main div {
+        border: 1px solid #777;
+        padding: 10px;
+      }
+      main div div.first {
+        margin-bottom: 20px;
+      }
+      main div div.dinline {
+        display: inline;
+      }
+      main div a {
+        border: 1px solid #777;
+        padding: 10px;
+      }
+      main div a.dblock {
+        display: block;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h3>5 = display: none</h3>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5 dnone">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+      </section>
+      <section>
+        <h3>5 = visbility: hidden</h3>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5 vhidden">5</div>
+        <div class="box6">6</div>
+        <div class="box7">7</div>
+        <div class="box8">8</div>
+        <div class="box9">9</div>
+      </section>
+
+      <div>
+        <div class="first">Normal DIV</div>
+        <div class="dinline">display: inline in DIV</div>
+        <a href="">Normal Link</a>
+        <a href="" class="dblock">display: block in Link</a>
+      </div>
+    </main>
+  </body>
+</html>
