@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cursors</title>
+        <style>
+        main {
+            margin: 40px auto;
+            width: 400px;
+        }
+        main section {
+            border: 1px solid #777;
+            height: 140px;
+            padding: 4px;
+            margin: 10px 0;
+        }
+        main section h3 {
+            margin: 0;
+        }
+        main section.cursor1 {cursor: move;}
+        main section.cursor2 {cursor: help;}
+        main section.cursor3 {cursor: crosshair;}
+        main section.cursor4 {cursor: url(imgs/basketball-emoji.png), pointer;}
+
+    </style>
+    </head>
+    <body>
+        <main>
+            <section class="cursor1">
+                <h3>Cursor: move</h3>
+            </section>
+            <section class="cursor2">
+                <h3>Cursor: help</h3>
+            </section>
+            <section class="cursor3">
+                <h3>Cursor: crosshair</h3>
+            </section>
+            <section class="cursor4">
+                <h3>Cursor: url(images/pointer.png), pointer</h3>
+            </section>
+        </main>
+    </body>
+</html>
