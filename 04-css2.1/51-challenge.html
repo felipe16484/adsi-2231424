@@ -5,13 +5,291 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Challenge</title>
+
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
         <style>
-        body {
-            background-color: rgb(20, 153, 80);
+            /* Tipo de Letra */
+        * {font-family: Arial, Helvetica, sans-serif;}
+            /* Fondo */
+        body {background-color: rgb(22, 160, 84);}
+
+            /* Sección Main */
+        main {
+            margin: 200px auto;
+            width: 1029px;
+            margin-top: 0;
         }
+
+            /* Logo Sprite Mezclado con el Color del Fondo */
+        div.logo1 {
+            background: url(imgs/spriteweb.png), no-repeat;
+            height: 192px;
+            width: 192px;
+            margin: 0px 581px;
+        }
+        div.logo1 {background-position: -10px -398px;}
+
+            /* Primer Menú */
+        menu.first {
+            margin: 0px;
+            padding: 0px;
+        }
+        menu.first ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        menu.first ul li {display: inline-block;}
+        menu.first ul li a {
+            background-color: rgb(16, 99, 53);
+            color: #fff;            
+            text-decoration: none;
+            display: block;
+            border-bottom: 5px solid white;
+            padding: 20px 0px;
+            width: 184px;
+            text-align: center;
+            font-weight: bold;     
+        }
+        a.ml {margin-left: 23px;}
+        menu ul li a:hover {
+            background-color: rgb(8, 44, 24);
+            border-bottom: 5px solid rgb(208, 226, 43);
+        }
+
+        /* Sección con 3 Imágenes */
+        main section {
+            background-color: rgb(16, 99, 53);
+            height: 242px;
+            margin-top: 35px;
+            width: 1029px;
+            padding: 0;
+        }
+        main section div.bottle1 {
+            background: url(imgs/spriteweb.png), no-repeat;
+            height: 202px;
+            width: 315px;
+            display: inline-block;
+            margin-top: 15px;
+            margin-left: 15px;
+            border: 2px solid #fff;
+            padding: 0;
+        }
+        main section div.bottle1 {background-position: -471px -6px;}
+
+        section.box div.bottle1 p {
+            background-color: rgba(255, 255, 255, 0.3);
+            text-align: center;
+            height: 71px; 
+            margin-top: 0;
+            line-height: 68px;
+            font-size: 1.3em;
+            font-weight: bolder;            
+        }
+
+        section div.ilum1:hover p {background-color: rgba(255, 255, 255, 0.7);}
+        section div.ilum2:hover p {background-color: rgba(255, 255, 255, 0.7);} 
+        section div.ilum3:hover p {background-color: rgba(255, 255, 255, 0.7);}         
+
+        /* Sección de 3 Textos con 2 Imágenes Laterales */
+        section.box1 {
+            padding: 0;            
+            height: 771px;
+        }
+        section.box1 div.principal.mb{margin-bottom: 2px;}
+
+        section.box1 div.principal {
+            background-color: #fff;
+            margin: 10px 10px;
+            margin-bottom: 8px;           
+            display: inline-block; 
+            padding-bottom: 25px;     
+        }
+        section.box1 div.principal a.text {
+            display: inline-block;
+            width: 670px;
+            height: 100px;
+            text-decoration: none;
+            color: black;
+            word-spacing: 8px;
+            text-align: justify;
+            font-size: medium;
+            line-height: 35px;
+            padding-top: 15px;                    
+        }
+        section.box1 div.principal div.logo2 {
+            background: url(imgs/spriteweb.png), no-repeat;
+            height: 82px;
+            width: 83px;
+            margin: 55px 40px;
+            display: inline-block;            
+        }
+        section.box1 div.principal div.logo2 {background-position: -300px -500px;}
+        
+        section.box1 div.principal div.lata {
+            background: url(imgs/spriteweb.png), no-repeat;
+            height: 167px;
+            width: 101px;
+            margin: 10px 20px;
+            display: inline-block;
+            margin-right: 47px;
+        }
+        section.box1 div.principal div.lata {background-position: -90px -200px;}
+
+        section.box1 div.principal a.hov1:hover {color: rgb(22, 160, 84);}
+        section.box1 div.principal a.hov2:hover {color: rgb(22, 160, 84);}
+        section.box1 div.principal a.hov3:hover {color: rgb(22, 160, 84);}
+
+        /* Sección del Footer con NavBar */
+        section.boxfooter {
+            background-color: #fff;
+            height: 255px;
+        }
+        section.boxfooter menu.second {            
+            margin: 0px;
+            padding: 0px;
+        }
+        menu.second ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+        menu.second ul li {display: inline-block;}
+        menu.second ul li a {
+            background-color: rgb(255, 255, 255);
+            color: black;            
+            text-decoration: none;
+            display: block;
+            border-bottom: 5px solid white;
+            padding: 20px 0px;
+            width: 160px;
+            text-align: center;
+            font-weight: normal;              
+        }
+        menu.second ul li a.ml2.move {margin-left: 100px;}
+        a.ml2 {margin-left: 0px;}
+        menu.second ul li a:hover {border-bottom: 5px solid rgb(8, 44, 24);}
+        main section.boxfooter div.allbottles {
+            background: url(imgs/spriteweb.png), no-repeat;
+            height: 181px;
+            width: 319px;
+            display: block;
+            margin-left: 344px;
+        }
+        main section.boxfooter div.allbottles {background-position: -456px -425px;}
     </style>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
     </head>
+
     <body>
 
+        <!-- Logo Sprite Mezclado con el Color del Fondo -->
+        <div class="logo1"></div>
+        <!-- Logo Sprite Mezclado con el Color del Fondo -->
+
+        <main>
+
+            <!-- Primer Menú -->
+            <menu class="first">
+                <ul>
+                    <li><a href="#">INICIO</a></li>
+                    <li><a href="#" class="ml">NOSOTROS</a></li>
+                    <li><a href="#" class="ml">PORTAFOLIO</a></li>
+                    <li><a href="#" class="ml">SERVICIOS</a></li>
+                    <li><a href="#" class="ml">CONTACTO</a></li>
+                </ul>
+            </menu>
+            <!-- Primer Menú -->
+
+            <!-- Sección con 3 Imágenes -->
+            <section class="box">
+                <div class="bottle1 ilum1">
+                    <p>Sprite 01</p>
+                </div>
+                <div class="bottle1 ilum2">
+                    <p>Sprite 02</p>
+                </div>
+                <div class="bottle1 ilum3">
+                    <p>Sprite 03</p>
+                </div>
+            </section>
+            <!-- Sección con 3 Imágenes -->
+
+            <!-- Sección de 3 Textos con 2 Imágenes Laterales -->
+            <section class="box1">
+                <div class="principal mb">
+
+                    <div class="logo2"></div>
+
+                    <a href="#" class="text hov1">Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Cum ducimus, voluptate,
+                        commodi debitis laboriosam accusantium libero atque
+                        accusamus explicabo dicta soluta impedit, placeat sunt.
+                        Placeat consectetur ratione molestiae quos debitis
+                        similique porro officiis non quae totam, veritatis ea
+                        in! Deserunt, obcaecati? Quidem sunt, quod eos nihil
+                        deserunt, quibusdam distinctio quasi voluptatem saepe,
+                        sed commodi. Placeat nesciunt pariatur impedit
+                        reiciendis ducimus!
+                    </a>
+
+                    <div class="lata"></div>
+
+                </div>
+                <div class="principal mb">
+
+                    <div class="logo2"></div>
+
+                    <a href="#" class="text hov2">Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Cum ducimus, voluptate,
+                        commodi debitis laboriosam accusantium libero atque
+                        accusamus explicabo dicta soluta impedit, placeat sunt.
+                        Placeat consectetur ratione molestiae quos debitis
+                        similique porro officiis non quae totam, veritatis ea
+                        in! Deserunt, obcaecati? Quidem sunt, quod eos nihil
+                        deserunt, quibusdam distinctio quasi voluptatem saepe,
+                        sed commodi. Placeat nesciunt pariatur impedit
+                        reiciendis ducimus!
+                    </a>
+
+                    <div class="lata"></div>
+                </div>
+                <div class="principal">
+
+                    <div class="logo2"></div>
+
+                    <a href="#" class="text hov3">Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Cum ducimus, voluptate,
+                        commodi debitis laboriosam accusantium libero atque
+                        accusamus explicabo dicta soluta impedit, placeat sunt.
+                        Placeat consectetur ratione molestiae quos debitis
+                        similique porro officiis non quae totam, veritatis ea
+                        in! Deserunt, obcaecati? Quidem sunt, quod eos nihil
+                        deserunt, quibusdam distinctio quasi voluptatem saepe,
+                        sed commodi. Placeat nesciunt pariatur impedit
+                        reiciendis ducimus!
+                    </a>
+
+                    <div class="lata"></div>
+
+                </div>
+            </section>
+            <!-- Sección de 3 Textos con 2 Imágenes Laterales -->
+
+            <!-- Sección del Footer con NavBar -->
+            <section class="boxfooter">
+                <div class="allbottles"></div>
+                <menu class="second">
+                    <ul>
+                        <li><a href="#" class="ml2 move">INICIO</a></li>
+                        <li><a href="#" class="ml2">NOSOTROS</a></li>
+                        <li><a href="#" class="ml2">PORTAFOLIO</a></li>
+                        <li><a href="#" class="ml2">SERVICIOS</a></li>
+                        <li><a href="#" class="ml2">CONTACTO</a></li>
+                    </ul>
+                </menu>
+            </section>
+            <!-- Sección del Footer con NavBar -->
+        </main>
     </body>
 </html>
