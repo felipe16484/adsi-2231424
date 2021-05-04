@@ -1,0 +1,26 @@
+body {
+    background-color: #5d745a;
+    font: 16px Airial;
+    color: #333;
+}
+
+main {
+    background-color: #fff;
+    border: 2px solid #40503e;
+    margin: 20px auto;
+    padding: 10px;
+    width: 800px;
+}
+
+main h1 {
+    margin: 0;
+    text-align: center;
+    border-bottom: 10px solid #5d745a;
+    background-color: #40503e;
+    padding: 10px;
+    color: #fff;
+}
+
+main h3 {
+    text-align: center;
+}
