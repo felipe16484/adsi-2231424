@@ -1,6 +1,6 @@
 body {
     background-color: #5d745a;
-    font: 16px Airial;
+    font: 16px Arial;
     color: #333;
 }
 
@@ -23,4 +23,11 @@ main h1 {
 
 main h3 {
     text-align: center;
+}
+
+h1 span a:link,
+h1 span a:visited {
+    color: #fff;
+    text-decoration: none;
+    float: left;
 }
