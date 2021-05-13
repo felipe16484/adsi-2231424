@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transformations</title>
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"><link
+            href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap"
+            rel="stylesheet">
+        <style>
+          section {
+              border: 2px solid rgb(223, 197, 4);
+              background: url(imgs/zenitsu.jpg) no-repeat center;
+              height: 280px;
+              margin: 20px auto;
+              width: 180px;
+          }
+          section.box1 {transform: translate(-200px);}
+          section.box2 {transform: rotate(90deg);}
+          section.box3 {transform: scale(0.5);}
+          section.box4 {transform: skew(30deg);}
+          section.box5 {transform: rotate(45deg) scale(0.6);}
+
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1><span><a href="index.html">&larr;</a></span>Transformations</h1>
+            <h3>transform: translate(-200px)</h3>
+            <section class="box1"></section>
+            <h3>transform: rotate(90deg)</h3>
+            <section class="box2"></section>
+            <h3>transform: scale(0.5)</h3>
+            <section class="box3"></section>
+            <h3>transform: skew(30deg)</h3>
+            <section class="box4"></section>
+            <h3>transform: rotate(45deg) scale(0.6)</h3>
+            <section class="box5"></section>
+        </main>
+    </body>
+</html>

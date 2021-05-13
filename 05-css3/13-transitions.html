@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Transitions</title>
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"><link
+            href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap"
+            rel="stylesheet">
+        <style>
+          section {              
+              background: url(imgs/kirby.png) no-repeat center;
+              background-size: cover;
+              height: 423px;
+              margin: 0px auto 20px auto;
+              width: 525px;
+          }
+          section.box1 { transition:  transform 0.5s ease-in;}
+          section.box1:hover { transform: scale(1.5);}
+          section.box2 { transition:  transform 1s ease-out;}
+          section.box2:hover { transform: rotate(360deg);}
+          section.box3 { transition: transform 0.5s,
+                                     width 0.5s 0.5s,
+                                     height 0.5s 0.5s;}
+          section.box3:hover { 
+              transform: translateX(100px);
+              height: 600px;
+              width: 600px;
+            }
+            section.box4 {
+                background-color: #f00;
+                background-image: none;
+                transition: all 1s ease-in-out;
+            }
+            section.box4:hover { background-color: #00f;}
+            section.box5 {
+                background-color: #0f0;
+                background-image: none;
+                transition: background 0.5s, width 0.5s 1s;
+            }
+            section.box5:hover { 
+                background-color: #00f;
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1><span><a href="index.html">&larr;</a></span>Transitions</h1>
+            <h3>transition: transform 0.5s ease-in</h3>
+            <section class="box1"></section>
+            <h3>transition: transform 1s ease-in</h3>
+            <section class="box2"></section>
+            <h3>transition: transition: transform 0.5s, width 0.5s 0.5s, height
+                0.5s 0.5s</h3>
+            <section class="box3"></section>
+            <h3>transition: background-color: #f00; background-image: none;
+                transition: all 1s ease-in-out</h3>
+            <section class="box4"></section>
+            <h3>transition: background-color: #0f0; background-image: none;
+                transition: background 0.5s, width 0.5s 1s</h3>
+            <section class="box5"></section>
+        </main>
+    </body>
+</html>
