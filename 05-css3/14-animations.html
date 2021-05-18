@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Animations</title>
+        <link rel="stylesheet" href="css/master.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com"><link
+            href="https://fonts.googleapis.com/css2?family=Aguafina+Script&display=swap"
+            rel="stylesheet">
+        <style>          
+            section.garden {
+                background: url(imgs/garden.jpg) no-repeat center;
+                background-size: cover;
+                height: 480px;
+                margin: 10px auto 0px auto;
+                overflow: hidden;
+                position: relative;
+                width: 800px;
+            }
+            div.dove {
+                background: url(imgs/dove.png) no-repeat center;
+                background-size: cover;
+                height: 80px;                
+                position: absolute;
+                width: 120px;
+                animation: animDove 6s ease-in infinite;
+            }
+            @keyframes animDove {
+                0%  {
+                    left: 0px;
+                    top: 0px;
+                    transform: rotateY(0deg) scale(1);
+                }
+                50% {
+                    left: 560px;
+                    top: 360px;
+                    transform: rotateY(0deg) scale(0.7);
+                }
+                51% {
+                    left: 560px;
+                    top: 360px;
+                    transform: rotateY(180deg) scale(0.7);
+                }
+                81% {
+                    left: 560px;
+                    top: 360px;
+                    transform: rotateY(180deg) scale(0.7);
+                }
+                100% {
+                    left: -200px;
+                    top: 400px;
+                    transform: rotateY(180deg) scale(10);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1><span><a href="index.html">&larr;</a></span>Animations</h1>
+            <section class="garden">
+                <div class="dove">
+
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media Queries</title>
+        <style>
+        * { transition: all 0.5s ease-out  }
+        body {
+            background-color: #013571;
+            color: #ffffffaa;
+            font: 16px Verdana;
+            margin: 0px;
+            padding: 0px;
+        }
+        main {
+            border: 10px solid #ffffff66;
+            margin: 0px auto;
+            padding: 20px;
+        }
+        main figure.logo {
+            background: url(imgs/pepsi01.png) no-repeat center;
+            height: 354px;
+            margin: 0px auto;
+            width: 919px;
+        }
+        main h1 {
+            text-align: center;
+        }
+        main h1 small {
+            font-size: 0.4em;
+        }
+        main h1 small.bp2,
+        main h1 small.bp3 {
+            display: none;
+        }
+        main p {
+            line-height: 1.8em;
+            text-align: justify;
+        }
+        @media (max-width: 1024px) {
+            main figure.logo {
+                background: url(imgs/pepsi02.png) no-repeat center;
+                height: 370px;
+                width: 348px;
+            }
+            main h1 small.bp1,
+            main h1 small.bp3 {
+                display: none;
+            }
+            main h1 small.bp2 {
+                display: inline;
+            }
+        }
+        @media (max-width: 780px) {
+            main figure.logo {
+                background: url(imgs/pepsi03.png) no-repeat center;
+                height: 156px;
+                width: 162px;
+            }
+            main h1 small.bp1,
+            main h1 small.bp2 {
+                display: none;
+            }
+            main h1 small.bp3 {
+                display: inline;
+            }
+        }
+        
+    </style>
+    </head>
+    <body>
+        <main>
+            <figure class="logo"></figure>
+            <h1>
+                Media Queries
+                <small class="bp1">( > 1024px )</small>
+                <small class="bp2">( <1024px )</small>
+                <small class="bp3">( <720px )</small>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Veritatis, quasi. Commodi, earum quis! Veniam deserunt, soluta
+                veritatis fugiat accusantium fugit labore rerum, perspiciatis
+                enim dolore, consequatur facere? Rem impedit neque quaerat minus
+                laudantium odio alias facere hic? Necessitatibus corporis
+                aliquid impedit in voluptatem, adipisci odit hic quos culpa aut
+                eos possimus amet praesentium reiciendis est! Nam, perferendis
+                voluptate velit et fuga hic! Dolorem illum dolor quod officia
+                debitis ab est tempore sed eos, dolore quo laudantium tempora
+                fuga nemo quasi dicta voluptates nihil ipsum sequi, in cumque
+                aspernatur, quia autem. Minus id inventore, iure eligendi quae
+                amet sunt est eos eaque minima incidunt illum nesciunt ea quod
+                aspernatur itaque temporibus placeat. Dolorem amet mollitia
+                assumenda fugiat neque fugit perspiciatis voluptatibus ut vel?
+                Repudiandae eveniet, perferendis odio perspiciatis vitae cumque
+                sunt libero nesciunt nostrum temporibus dolores maiores esse
+                distinctio consequuntur tempore fugiat dolore fuga tenetur
+                reprehenderit facilis omnis voluptates, hic ipsum! Voluptatem
+                illum expedita beatae, ratione explicabo sapiente nulla laborum
+                quam dolores? Quia quam iure quaerat, obcaecati quos
+                exercitationem, possimus temporibus id deleniti inventore iste
+                dicta adipisci sunt tenetur? Reiciendis nam corporis
+                reprehenderit facere adipisci deserunt itaque aliquid, neque
+                dignissimos tempore in hic at, blanditiis vel quidem autem
+                veritatis vitae labore?
+            </p>
+        </main>
+    </body>
+</html>
