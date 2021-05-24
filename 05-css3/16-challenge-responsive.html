@@ -6,34 +6,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Challenge Responsive</title>
         <style>
-            /* Principal */
+            /* Principal */            
             * { 
                 font-family: Arial, Helvetica, sans-serif;
-                transition: all 0.1s linear;
+                transition: all 0.2s ease-out;
                 }
+            body {
+                margin: 0;
+            }
+            main {background-color: #fff;}
 
-            main {
-                background-color: #fff;
-                border: 2px solid red;
-                margin: 40px auto;
-                }
 
-            /* Logo Inicial */
-            
+            /* Logo Inicial */            
             section.sec1 figure.logo1 {
                 background: url(imgs/challenge-responsive/logo\ 1.png) no-repeat center;
                 background-size: contain;
                 height: 350px;                
-                margin: 0px auto;
+                margin: 30px auto;
             }           
 
-            /* 4 imágenes */
-            section.sec2 {margin: 30px 265px;}
 
+            /* 4 imágenes */
+            section.sec2 {
+                margin: 30px auto;
+                width: 1108px;
+            }
             section.sec2 a.disp p.text {
                 background-color:rgba(0, 0, 0, 0.6);                
                 color: #fff;
-                font-size: 130%;
+                font-size: 110%;
                 height: 65px;
                 line-height: 60px;
                 margin-top: 185px;
@@ -46,10 +47,8 @@
             }
             section.sec2 a.disp {
                 display: inline-block;
-                text-decoration: none;
+                text-decoration: none;                
             }
-            section.sec2 a.move {margin: 30px 15px 30px 15px}
-
             section.sec2 a.img1 {
                 background: url(imgs/challenge-responsive/Inosuke.jpg) no-repeat;
                 background-size: cover;
@@ -60,26 +59,33 @@
                 background: url(imgs/challenge-responsive/Tanjiro.jpg) no-repeat;
                 background-size: cover;
                 height: 250px;
-                width: 250px;                
+                width: 250px;
+                margin-left: 27px;                
             }
             section.sec2 a.img3 {
                 background: url(imgs/challenge-responsive/Nezuko.jpg) no-repeat;
                 background-size: cover;
                 height: 250px;
-                width: 250px;                
+                width: 250px;
+                margin-left: 27px;                
             }
             section.sec2 a.img4 {
                 background: url(imgs/challenge-responsive/Zenitsu.jpg) no-repeat;
                 background-size: cover;
                 height: 250px;
-                width: 250px;                
+                width: 250px;
+                margin-left: 27px;                
             }
+
             
             /* 2 Imágenes + Texto */
-            section.sec3 {margin: 0px 265px;}
-            
-            section.sec3 div.move {margin: 0px 15px 60px 15px;}
-
+            section.sec3 {
+                border: 1px dashed #777;
+                height: 250px;
+                margin: 15px auto;
+                overflow: hidden;
+                width: 1108px;
+                }
             section.sec3 div.logo3 {
                 background: url(imgs/challenge-responsive/Kyojuro.jpeg);
                 background-size: cover;
@@ -96,40 +102,76 @@
             section.sec3 div.logo4,
             section.sec3 div.moving {
                 display: inline-block;
-                vertical-align: top;                
-            }
+                vertical-align: top;
+            }                      
             section.sec3 div.moving h3 {
                 font-size: 200%;
-                margin: 10px;
+                margin: 13px 0px 13px 27px;          
                 }
             section.sec3 div.moving p {
-                line-height: 25px;
+                font-size: 13px;
+                line-height: 23px;
+                margin: 13px 0px 13px 27px;
                 text-align: justify;
-                width: 658px;
+                width: 530px;
             }
 
-            /* Media Queries */
-            @media (max-width: 1700px) {                
-                section.sec2,
-                section.sec3{
-                    margin-left: 140px;
-                    margin-right: 80px;
-                }
-            }
-            @media (max-width: 1400px) {                
-                section.sec2,
-                section.sec3{
-                    margin-left: 80px;
-                    margin-right: 80px;
-                }
-            }
+
+            /* Media Queries */            
             @media (max-width: 1024px) {                
                 section.sec1 figure.logo1{
                 background: url(imgs/challenge-responsive/logo\ 2.png) no-repeat center;                
                 height: 220px;
                 width: 270px;
-                }                
+                }
+                section.sec2 {
+                    width: 560px;
+                    height: 527px;
+                }
+                section.sec2 a.img1,
+                section.sec2 a.img2{
+                    margin-bottom: 30px;
+                }
+                section.sec2 a.img3 {
+                    margin-left: 0px;
+                }
+                section.sec3 {
+                    width: 560px;
+                }                                     
+                section.sec3 div.moving p {
+                    overflow-y: scroll;
+                    width: 250px;
+                    height: 180px;
+                }
+                section.sec3 div.moving h3 {
+                    font-size: 20px;
+                }                     
             }
+            @media (max-width: 780px) {                
+                section.sec2 {
+                    width: 250px;
+                    height: 1090px;
+                }
+                section.sec2 a.img1,
+                section.sec2 a.img2,
+                section.sec2 a.img3,
+                section.sec2 a.img4{
+                    margin-bottom: 30px;
+                    margin-left: 0;
+                }
+                section.sec3 {
+                    width: 250px;
+                    height: 500px;
+                }                                     
+                section.sec3 div.moving p {
+                    overflow-y: scroll;
+                    width: 200px;
+                    height: 180px;
+                }
+                section.sec3 div.moving h3 {
+                    font-size: 20px;
+                }                           
+            }            
         </style>
     </head>
     <body>
@@ -141,16 +183,16 @@
 
             <!-- 4 imágenes -->
             <section class="sec2">
-                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img1 disp move" target="_blank">
+                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img1 disp" target="_blank">
                     <p class="text">Inosuke Hashibira</p>
                 </a>
-                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img2 disp move" target="_blank">
+                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img2 disp" target="_blank">
                     <p class="text">Tanjiro Kamado</p>
                 </a>
-                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img3 disp move" target="_blank">
+                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img3 disp" target="_blank">
                     <p class="text">Nezuko Kamado</p>
                 </a>
-                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img4 disp move" target="_blank">
+                <a href="https://www3.animeflv.net/anime/kimetsu-no-yaiba" class="img4 disp" target="_blank">
                     <p class="text">Zenitsu Agatsuma</p>
                 </a>
             </section>
@@ -160,15 +202,19 @@
                 <div class="logo3 move"></div>
                 <div class="moving">
                     <h3>Kyojuro Rengoku</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum neque, autem molestiae praesentium labore, aliquam, tempore fugiat possimus ipsa ratione enim iure quas nobis! Saepe sed asperiores provident doloremque nisi quisquam nihil amet. Nobis minus, repudiandae assumenda, fugiat accusamus commodi autem et nemo nam voluptatibus aperiam tempore perferendis? Voluptate, ducimus. Consequuntur labore, ab tempora culpa voluptate voluptatem suscipit similique explicabo maxime laborum et laboriosam fugit numquam, earum praesentium minima asperiores.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum neque, autem molestiae praesentium labore, aliquam,tempore fugiat possimus ipsa ratione enim iure quas nobis! Saepe sed asperiores provident doloremque nisi quisquamnihil amet. Nobis minus, repudiandae assumenda, fugiat accusamus commodi autem et nemo nam voluptatibus aperiam temporeperferendis? Voluptate, ducimus. Consequuntur labore, ab tempora culpa voluptate voluptatem suscipit similiqueexplicabo maxime laborum et laboriosam fugit numquam, earum praesentium minima asperiores.</p>
                 </div>
-                <br>
+            </section>               
+            <br>
+            <section class="sec3">
                 <div class="logo4 move"></div>
                 <div class="moving">
                     <h3>Akaza (Upper Moon 3)</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum neque, autem molestiae praesentium labore, aliquam, tempore fugiat possimus ipsa ratione enim iure quas nobis! Saepe sed asperiores provident doloremque nisi quisquam nihil amet. Nobis minus, repudiandae assumenda, fugiat accusamus commodi autem et nemo nam voluptatibus aperiam tempore perferendis? Voluptate, ducimus. Consequuntur labore, ab tempora culpa voluptate voluptatem suscipit similique explicabo maxime laborum et laboriosam fugit numquam, earum praesentium minima asperiores.</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum neque, autem molestiae praesentium labore, aliquam,tempore fugiat possimus ipsa ratione enim iure quas nobis! Saepe sed asperiores provident doloremque nisi quisquamnihil amet. Nobis minus, repudiandae assumenda, fugiat accusamus commodi autem et nemo nam voluptatibus aperiam temporeperferendis? Voluptate, ducimus. Consequuntur labore, ab tempora culpa voluptate voluptatem suscipit similiqueexplicabo maxime laborum et laboriosam fugit numquam, earum praesentium minima asperiores.</p>
                 </div>
-            </section>
+            </section>             
+            
+
         </main>
     </body>
 </html>
