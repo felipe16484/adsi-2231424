@@ -21,6 +21,7 @@ main h1 {
     color: #fff;
 }
 
+main h2,
 main h3 {
     text-align: center;
 }
