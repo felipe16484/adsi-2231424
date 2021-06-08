@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Elements</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Get Elements</h1>
+        </header>
+        <section>
+
+            <h2>Get Id</h2>
+            <strong id="year"></strong>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+            <h2>Get TagName</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, dolorem!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, dolorem!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, dolorem!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, dolorem!</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, dolorem!</p>
+            <strong id="tags"></strong>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+            <h2>Get Class Name</h2>
+            <strong id="year"></strong>
+
+        </section>
+    </main>
+
+    <script>
+
+        // Get Elements By Id
+        let year       = document.getElementById('year');
+        let today      = new Date();
+        year.innerText = "Current year: " + today.getFullYear();
+
+        // Get Elements By TagName
+        let ntags      = document.getElementsByTagName('p');
+        let tags       = document.getElementById('tags');
+        tags.innerText = "There are: " + ntags.length + " paragraphs.";
+
+        // Get Elements By ClassName
+
+        // Query Selector
+
+    </script>
+
+</body>
+</html>
