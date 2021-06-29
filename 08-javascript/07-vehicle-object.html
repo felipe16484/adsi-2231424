@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Object</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+        section.container {
+            height: 760px;
+        }
+
+        /* Skin - - - - - - - - - - - - - - - - - - */
+
+        div.skin {
+            background: url(/08-javascript/imgs/skin.png) no-repeat;
+            height: 748px;
+            margin: 0 auto;
+            position: relative;
+            transition: all 0.5s ease-out;
+            width: 402px;
+            z-index: 2;
+        }
+
+        div.skinback {            
+            height: 748px;
+            margin: 0 auto;
+            position: relative;
+            top: -748px;
+            transition: all 0.5s ease-out;
+            width: 402px;
+            z-index: 1;  
+        }
+        /* Attributes - - - - - - - - - - - - - - - - - - */
+
+        section.attributes {
+            position: relative;
+            padding: 0;
+            top: 130px;
+            left: 23px;
+        }
+        section.attributes h4 {
+            color: #a99731;
+            font-size: 24px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            margin: 0;
+            position: absolute;
+        }
+        section.attributes h4#txt-reference {
+            left: 192px;
+        }
+        section.attributes h4#txt-model {
+            top: 92px;
+        }
+        section.attributes h4#txt-color {
+            left: 192px;
+            top: 92px;
+        }
+
+        /* Darkmode - - - - - - - - - - - - - - - - - - */
+        button {
+            border: none;
+            display: block;
+            transition: all 0.2s ease-in;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(1.1);            
+        }
+        div.skin button#bt-dark {
+            background: url(/08-javascript/imgs/bt-darkmode.png) no-repeat;
+            height: 48px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 48px;
+        }
+
+        /* Methods - - - - - - - - - - - - - - - - - - */
+        section.controls {
+            padding: 0;
+            position: relative;
+            left: 15px;
+            top: 660px;
+        }
+        section.controls button {
+            height: 76px;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: -5px;
+            width: 76px;
+        }
+        section.controls button#bt-on {background: url(imgs/bt-on.png);}
+        section.controls button#bt-off {background: url(imgs/bt-off.png);}
+        section.controls button#bt-stop {background: url(imgs/bt-stop.png);}
+        section.controls button#bt-fw {background: url(imgs/bt-fw.png);}
+        section.controls button#bt-bw {background: url(imgs/bt-bw.png);}
+
+        /* Landscape - - - - - - - - - - - - - - - - - - */
+        section.landscape{
+            height: 344px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            bottom: 137px;
+            left: 13px;
+            width: 374px;
+            z-index: 1;
+        }
+
+        section.landscape div { position: absolute; }
+
+        section.landscape div.sky {
+            background: url(imgs/sky.png) repeat-x;
+            height: 240px;
+            top: -84px;
+            width: 748px;
+        }
+        section.landscape div.sea {
+            background: url(imgs/sea.png) repeat-x;
+            height: 151px;
+            top: 59px;
+            width: 748px;
+        }
+        section.landscape div.sand {
+            background: url(imgs/sand.png) repeat-x;
+            height: 133px;
+            top: 146px;
+            width: 748px;
+        }
+        section.landscape div.road {
+            background: url(imgs/street-dark.png) repeat-x;
+            height: 63px;
+            top: 279px;
+            left: -4px;
+            width: 748px;
+        }
+        /* Darkmode - - - - - - - - - - - - - - - - - - */
+        div.skin.dark {
+            background: url(/08-javascript/imgs/skin-dark.png) no-repeat;
+        }
+        div.skin.dark button#bt-dark {
+            background: url(imgs/bt-lightmode.png) no-repeat;
+        }
+        div.skin.dark section.attributes h4 {
+            opacity: 0.8;
+            color: #fff;
+        }
+        div.skin.dark figure#van {
+            background: url(imgs/van-dark.png) no-repeat;
+        }
+        div.skin.dark + div.skinback section.landscape div.sky  { background: url(imgs/sky-dark.png) repeat-x; top: 0px;}
+        div.skin.dark + div.skinback section.landscape div.sea  { background: url(imgs/sea-dark.png) repeat-x;}
+        div.skin.dark + div.skinback section.landscape div.sand { background: url(imgs/sand-dark.png) repeat-x;}
+        /* Van - - - - - - - - - - - - - - - - - - */
+        figure#van {
+            background: url(imgs/van.png) no-repeat;
+            height: 90px;
+            left: 50%;
+            position: absolute;
+            left: 55px;
+            top: 513px;
+            width: 99px;
+            z-index: 3;
+        }
+        figure#van.on {
+            animation: animON 0.5s infinite;
+        }
+        @keyframes animON {
+            0%, 100% { top: 513px; }
+            50%      { top: 510px; }
+        }
+
+        /* Parallax - - - - - - - - - - - - - - - - - - */
+        section.landscape.fordware div.sky {
+            animation: animParallax 40s linear infinite;
+        }
+        section.landscape.fordware div.sea {
+            animation: animParallax 20s linear infinite;
+        }
+        section.landscape.fordware div.sand {
+            animation: animParallax 10s linear infinite;
+        }
+        section.landscape.fordware div.road {
+            animation: animParallax 4s linear infinite;
+        }
+
+        @keyframes animParallax {
+            0% { background-position: 0 0; }
+            100% { background-position: -748px 0; }
+        }
+
+        /* Paused - - - - - - - - - - - - - - - - - - */
+        section.landscape.pause div.sky,
+        section.landscape.pause div.sea,
+        section.landscape.pause div.sand,
+        section.landscape.pause div.road{
+            animation-play-state: paused;
+        }
+
+        /* Backware - - - - - - - - - - - - - - - - - - */
+        section.landscape.backware div.sky,
+        section.landscape.backware div.sea,
+        section.landscape.backware div.sand,
+        section.landscape.backware div.road{
+            animation-direction: reverse;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Vehicle Object</h1>
+        </header>
+
+        <section class="container">
+            <div class="skin">
+                <button id="bt-dark"></button>
+                <section class="attributes">
+                    <h4 id="txt-brand"></h4>
+                    <h4 id="txt-reference"></h4>
+                    <h4 id="txt-model"></h4>
+                    <h4 id="txt-color"></h4>
+                </section>                
+                <figure id="van"></figure>
+                <section class="controls">
+                    <button id="bt-on"></button>
+                    <button id="bt-off"></button>
+                    <button id="bt-stop"></button>
+                    <button id="bt-fw"></button>
+                    <button id="bt-bw"></button>
+                </section>
+            </div>
+            <div class="skinback">
+                <section class="landscape">
+                    <div class="sky"></div>
+                    <div class="sea"></div>
+                    <div class="sand"></div>
+                    <div class="road"></div>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <script>
+
+        // Variables
+        var tbrand     = document. getElementById('txt-brand');
+        var treference = document. getElementById('txt-reference');
+        var tmodel     = document. getElementById('txt-model');
+        var tcolor     = document. getElementById('txt-color');
+
+        var btdark     = document.getElementById('bt-dark');
+        var bton       = document.getElementById('bt-on');
+        var btoff      = document.getElementById('bt-off');
+        var btstop     = document.getElementById('bt-stop');
+        var btfw       = document.getElementById('bt-fw');
+        var btbw       = document.getElementById('bt-bw');
+
+        var van        = document.getElementById('van');
+        var skin       = document.querySelector('div.skin');
+        var landscape  = document.querySelector('section.landscape');
+        var dmode      = false;
+        var engine     = false;
+        var move       = false;
+
+        var vehicle    = {
+
+            // Attributes
+            brand: 'Volkswagen',
+            reference: 'Ban',
+            model: '1978',
+            color: 'AquaDark',
+
+            // Methods
+            showAttributes: function() {
+                tbrand.innerText     = this.brand;
+                treference.innerText = this.reference;
+                tmodel.innerText     = this.model;
+                tcolor.innerText     = this.color;
+            },
+            on: function() {
+                if(engine == false) {
+                    van.classList.add('on');
+                    engine = true;
+                }
+            },
+            off: function() {
+                if(engine == true && move == false) {
+                    van.classList.remove('on');
+                    landscape.classList.remove('backware');
+                    landscape.classList.remove('pause');
+                    landscape.classList.remove('fordware');
+                    engine = false;
+                }
+            },
+            stop: function() {
+                if(move == true) {
+                    landscape.classList.add('pause');
+                    move = false;
+                }
+            },
+            fordware: function() {
+                if(engine == true && move == false) {
+                    landscape.classList.add('fordware');
+                    landscape.classList.remove('pause');
+                    landscape.classList.remove('backware');
+                    move = true;
+                }
+            },
+            backware: function() {
+                if(engine == true && move == false) {
+                    landscape.classList.add('fordware');
+                    landscape.classList.add('backware');
+                    landscape.classList.remove('pause');
+                    move = true;
+                }
+            },            
+        }
+
+        // Events
+        vehicle.showAttributes();
+
+        btdark.onclick = function(){
+           if (dmode == false ) {
+               skin.classList.add('dark');
+               dmode = true;
+            } else {
+               skin.classList.remove('dark');
+               dmode = false;
+            }
+        }
+        bton.onclick = function(){
+            vehicle.on();
+        }
+        btoff.onclick = function(){
+            vehicle.off();
+        }
+        btstop.onclick = function(){
+            vehicle.stop();
+        }
+        btfw.onclick = function(){
+            vehicle.fordware();
+        }
+        btbw.onclick = function(){
+            vehicle.backware();
+        }
+        
+    </script>
+</body>
+</html>

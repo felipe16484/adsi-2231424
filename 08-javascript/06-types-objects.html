@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects Types</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Objects Types</h1>
+        </header>
+
+        <section>
+            <ul id="types"></ul>
+        </section>
+    </main>
+
+    <script>
+        let types = document.getElementById('types')
+        let objString = new String;
+        let objNumber = new Number;
+        let objBoolean = new Boolean;
+        let objArray = new Array;
+        let objObject = new Object;
+        let objDate = new Date;
+
+        types.innerHTML  = "<li> Type: "+ objString.constructor.name +"</li>"
+        types.innerHTML += "<li> Type: "+ objNumber.constructor.name +"</li>"
+        types.innerHTML += "<li> Type: "+ objBoolean.constructor.name +"</li>"
+        types.innerHTML += "<li> Type: "+ objArray.constructor.name +"</li>"
+        types.innerHTML += "<li> Type: "+ objObject.constructor.name +"</li>"
+        types.innerHTML += "<li> Type: "+ objDate.constructor.name +"</li>"
+    </script>
+</body>
+</html>

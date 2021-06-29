@@ -30,8 +30,19 @@
             <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
             <h2>Get Class Name</h2>
-            <strong id="year"></strong>
+            <ul>
+                <li class="element">Element 1</li>
+                <li class="element">Element 2</li>
+                <li class="element">Element 3</li>
+                <li class="element">Element 4</li>
+                <li class="element">Element 5</li>
+            </ul>
 
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+            <h2>Query Selector / Selector All</h2>
+            <button class="btn">Button 1</button>
+            <button class="btn">Button 2</button>
         </section>
     </main>
 
@@ -46,10 +57,16 @@
         let ntags      = document.getElementsByTagName('p');
         let tags       = document.getElementById('tags');
         tags.innerText = "There are: " + ntags.length + " paragraphs.";
-
         // Get Elements By ClassName
-
-        // Query Selector
+        let elements   = document.getElementsByClassName('element');
+        elements[2].style.backgroundColor = '#f0dc68';
+        elements[2].style.fontWeight = '800';
+        elements[2].style.width = '200px';
+        // Query Selector / Selector All
+        let btn        = document.querySelector('section button.btn');
+        let btns       = document.querySelectorAll('section button.btn');
+        btn.style.color  = '#900';
+        btns[1].style.color = '#090';
 
     </script>
 

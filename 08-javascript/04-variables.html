@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Variables</h1>
+        </header>
+
+        <section>
+            <h3>Type String: <i id="type-string"></i></h3>
+            <h3>Type Number: <i id="type-number"></i></h3>
+            <h3>Type Boolean: <i id="type-bool"></i></h3>
+            <h3>Type Null/Undefined: <i id="type-null"></i></h3>
+            <h3>Type Array: <i id="type-array"></i></h3>
+            <h3>Type Object: <i id="type-object"></i></h3>
+        </section>
+    </main>
+
+    <script>
+        /*ID Elements*/
+        var tstring = document.getElementById('type-string');
+        var tnumber = document.getElementById('type-number');
+        var tboolean = document.getElementById('type-bool');
+        var tnull = document.getElementById('type-null');
+        var tarray = document.getElementById('type-array');
+        var tobject = document.getElementById('type-object');
+        /*Type String*/
+        const string1 = "ADSI";
+        const string2 = ' 2231424';
+        const stringr = string1 + string2;
+        tstring.innerText = stringr;
+        /*Type Number*/
+        let num1 = 12;
+        let num2 = 4.569;
+        tnumber.innerText = num1 + num2;
+        /*Type Boolean*/
+        var bool = (200>4000);
+        tboolean.innerText = bool;
+        /*Type Null/Undefined*/
+        var firstname = null;
+        var lastname = undefined;
+        tnull.innerText = firstname + ' ' + lastname;
+        /*Type Array*/
+        var colors = new Array('red', 'green', 'blue', 'yellow', 'fuchsia', 'aqua');
+        tarray.innerText = colors[5];
+        /*Type Array*/
+        var student = {
+            name: 'Kyojurou Rengoku',
+            age: 25,
+            element: 'Fire'
+        }
+        tobject.innerText = student.name;
+    </script>
+</body>
+</html>

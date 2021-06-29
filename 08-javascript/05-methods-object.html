@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Object Methods</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Access Object Methods</h1>
+        </header>
+
+        <section>
+            <h2>Pokemon Actions</h2>
+            <ol id="output"></ol>
+        </section>
+    </main>
+
+    <script>
+        // ID
+        var output = document.getElementById('output');
+        // Object
+        var pokemon = {
+            // Attributes
+            name: 'Entei',
+            type: 'Fire',
+            health: 80,
+
+            // Methods
+            feed: function() {
+                this.health += 5;
+            },
+            defence: function() {
+                if (this.health<=0)
+                    return this.name + " Is dead!";
+                else
+                    this.health -= 10;
+            }
+        }
+        output.innerHTML = "<li> Name: " + pokemon.name + "</li>";
+        output.innerHTML += "<li> Health: " + pokemon.health + "</li>";
+        pokemon.feed();
+        output.innerHTML += "<li> Feed: +5 </li>";
+        pokemon.feed();
+        output.innerHTML += "<li> Feed: +5 </li>";
+        output.innerHTML += "<li> Health: " + pokemon.health + "</li>";
+        pokemon.defence();
+        output.innerHTML += "<li> Defence: -10 </li>";
+        pokemon.defence();
+        output.innerHTML += "<li> Defence: -10 </li>";
+        pokemon.defence();
+        output.innerHTML += "<li> Defence: -10 </li>";
+        pokemon.defence();
+        output.innerHTML += "<li> Defence: -10 </li>";
+        output.innerHTML += "<li> Health: " + pokemon.health +"</li>";
+        pokemon.defence();
+        pokemon.defence();
+        pokemon.defence();
+        pokemon.defence();
+        pokemon.defence();
+        output.innerHTML += "<li> Defence: -50 </li>";
+        output.innerHTML += "<li> "+ pokemon.defence() +" </li>";
+
+    </script>
+</body>
+</html>
