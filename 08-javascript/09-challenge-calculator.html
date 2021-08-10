@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge - Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+        * {
+            transition: all 0.4s ease-out;
+        }
+
+        /* - - - - - - - - Skin - - - - - - - - - -*/
+
+        section.container section.base div#skin {
+            background: url(imgs/Calculator/skin.png) no-repeat;
+            height: 736px;
+            margin: 0px auto;
+            padding: 0;
+            position: relative;
+            width: 414px;
+            z-index: 1;
+        }
+
+
+        /* - - - - - - - - Darkmode Button - - - - - - - - - -*/
+
+        section.container section.darkmodeButton button#mode { 
+            background: url(imgs/Calculator/mode.png) no-repeat;
+            border-style: none;
+            height: 60px;
+            position: relative;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            z-index: 1;
+            }
+
+
+        /* - - - - - - - - Display - - - - - - - - - -*/
+        
+        section.container div#operation{
+            border: 1px solid red;
+            height: 43px;
+            position: relative;
+            right: 0px;
+            top: 0px;
+            width: 379px;
+            z-index: 1;
+        }
+        
+
+        /* - - - - - - - - Buttons - - - - - - - - - -*/
+        section.container section.buttons button:hover{ 
+            transition: all 0.1s ease-out;
+            transform: scale(1.1);
+        }
+
+        section.container section.buttons {
+            *border: 0.5px solid red;
+            height: 686px;
+            margin: 10px auto;
+            padding: 0;
+            position: relative;
+            width: 342px;
+            }
+
+        section.container section.buttons button#number1 { 
+            background: url(imgs/Calculator/1.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;            
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number2 { 
+            background: url(imgs/Calculator/2.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number3 { 
+            background: url(imgs/Calculator/3.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number4 { 
+            background: url(imgs/Calculator/4.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number5 { 
+            background: url(imgs/Calculator/5.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number6 { 
+            background: url(imgs/Calculator/6.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number7 { 
+            background: url(imgs/Calculator/7.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number8 { 
+            background: url(imgs/Calculator/8.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number9 { 
+            background: url(imgs/Calculator/9.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#number0 { 
+            background: url(imgs/Calculator/0.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#erase-all { 
+            background: url(imgs/Calculator/borrar-todo.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#erase { 
+            background: url(imgs/Calculator/borrar.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#pow { 
+            background: url(imgs/Calculator/potencia.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#division { 
+            background: url(imgs/Calculator/division.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#multiplication { 
+            background: url(imgs/Calculator/multiplicacion.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#subtraction { 
+            background: url(imgs/Calculator/resta.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#plus { 
+            background: url(imgs/Calculator/suma.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#iqual { 
+            background: url(imgs/Calculator/=.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#point { 
+            background: url(imgs/Calculator/punto.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        section.container section.buttons button#percentage { 
+            background: url(imgs/Calculator/porcentaje.png) no-repeat; 
+            border-style: none;
+            height: 86px;
+            position: relative;
+            width: 86px;
+            z-index: 1;
+            }
+        
+
+
+        /* - - - - - - - - Darkmode - - - - - - - - - -*/
+        section.container.dark section.buttons button#number1 { background: url(imgs/Calculator/1-dark.png); }
+        section.container.dark section.buttons button#number2 { background: url(imgs/Calculator/2-dark.png); }
+        section.container.dark section.buttons button#number3 { background: url(imgs/Calculator/3-dark.png); }
+        section.container.dark section.buttons button#number4 { background: url(imgs/Calculator/4-dark.png); }
+        section.container.dark section.buttons button#number5 { background: url(imgs/Calculator/5-dark.png); }
+        section.container.dark section.buttons button#number6 { background: url(imgs/Calculator/6-dark.png); }
+        section.container.dark section.buttons button#number7 { background: url(imgs/Calculator/7-dark.png); }
+        section.container.dark section.buttons button#number8 { background: url(imgs/Calculator/8-dark.png); }
+        section.container.dark section.buttons button#number9 { background: url(imgs/Calculator/9-dark.png); }
+        section.container.dark section.buttons button#number0 { background: url(imgs/Calculator/0-dark.png); }
+        section.container.dark section.buttons button#erase-all { background: url(imgs/Calculator/borrar-todo-dark.png); }
+        section.container.dark section.buttons button#erase { background: url(imgs/Calculator/borrar-dark.png); }
+        section.container.dark section.buttons button#pow { background: url(imgs/Calculator/potencia-dark.png); }
+        section.container.dark section.buttons button#division { background: url(imgs/Calculator/division-dark.png); }
+        section.container.dark section.buttons button#multiplication { background: url(imgs/Calculator/multiplicacion-dark.png); }
+        section.container.dark section.buttons button#subtraction { background: url(imgs/Calculator/resta-dark.png); }
+        section.container.dark section.buttons button#plus { background: url(imgs/Calculator/suma-dark.png); }
+        section.container.dark section.buttons button#iqual { background: url(imgs/Calculator/=-dark.png); }
+        section.container.dark section.buttons button#point { background: url(imgs/Calculator/punto-dark.png); }
+        section.container.dark section.buttons button#percentage { background: url(imgs/Calculator/porcentaje-dark.png); }
+        section.container.dark section.darkmodeButton button#mode { background: url(imgs/Calculator/mode-dark.png); }
+        section.container.dark section.base div#skin { background: url(imgs/Calculator/skin-dark.png); }
+
+    </style>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Challenge - Calculator</h1>
+        </header>
+
+        <section class="container">
+
+            <section class="darkmodeButton">
+                <button id="mode"></button>
+            </section>
+
+            <section class="base">
+                <div id="skin"></div>
+            </section>
+
+            
+            <!-- Display -->
+
+            <div id="operation"></div>
+
+            <div id="result"></div>
+           
+
+            <section class="buttons">                
+                <button id="number1"></button>
+                <button id="number2"></button>
+                <button id="number3"></button>
+                <button id="number4"></button>
+                <button id="number5"></button>
+                <button id="number6"></button>
+                <button id="number7"></button>
+                <button id="number8"></button>
+                <button id="number9"></button>
+                <button id="number0"></button>
+                <button id="erase-all"></button>
+                <button id="erase"></button>
+                <button id="pow"></button>
+                <button id="division"></button>
+                <button id="multiplication"></button>
+                <button id="subtraction"></button>
+                <button id="plus"></button>
+                <button id="iqual"></button>
+                <button id="point"></button>
+                <button id="percentage"></button>                
+            </section>
+
+        </section>
+
+    </main>
+
+    <script>
+        
+        // - - - - - - - - - - - - Darkmode - - - - - - - - - - - - - //
+
+        // Variables
+        var darkModeButton   = document.getElementById('mode');
+        var darkModeFunction = document.querySelector('section.container')
+        var darkMode         = false;
+
+        // Events
+        darkModeButton.onclick = function() {
+            if (darkMode == false){
+                darkModeFunction.classList.add('dark');
+                darkMode = true;
+            } else {
+                darkModeFunction.classList.remove('dark');
+                darkMode = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
