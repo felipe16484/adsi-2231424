@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Comparison</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+        table tr th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        table tr th input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 8px;
+        }
+        table tr:nth-child(odd) {
+            background-color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #edd312;
+        }
+        table tr td {
+            text-align: center;
+            padding: 10px;
+        }
+        #vx::placeholder {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Operator Comparison</h1>
+        </header>
+
+        <section>
+           <table>
+               <tr>
+                   <th colspan="4">
+                       <input type="number" id="vx" placeholder="Valor de X">
+                    </th>
+               </tr>
+               <tr>
+                   <th>Operator</th>
+                   <th>Description</th>
+                   <th>Comparison</th>
+                   <th>Result</th>
+               </tr>
+               <tr>
+                   <td>==</td>
+                   <td>Is equal to</td>
+                   <td>x == 8</td>
+                   <td id="vx1"></td>
+               </tr>               
+               <tr>
+                    <td>===</td>
+                    <td>Is exactly the same (value and type)</td>
+                    <td>x === 5</td>
+                    <td id="vx2"></td>
+               </tr>
+               <tr>
+                    <td>!=</td>
+                    <td>Different</td>
+                    <td>x != 8</td>
+                    <td id="vx3"></td>
+               </tr>
+               <tr>
+                    <td>!==</td>
+                    <td>Different (value and type)</td>
+                    <td>x != 5</td>
+                    <td id="vx4"></td>
+               </tr>
+               <tr>
+                    <td>></td>
+                    <td>Is greater than</td>
+                    <td>x > 8</td>
+                    <td id="vx5"></td>
+               </tr>
+               <tr>
+                    <td><</td>
+                    <td>Is less than</td>
+                    <td>x < 8</td>
+                    <td id="vx6"></td>
+               </tr>
+               <tr>
+                    <td>>=</td>
+                    <td>Is greater or equal than</td>
+                    <td>x >= 8</td>
+                    <td id="vx7"></td>
+               </tr>
+               <tr>
+                    <td><=</td>
+                    <td>Is less or iqual than</td>
+                    <td>x <= 8</td>
+                    <td id="vx8"></td>
+               </tr>
+               
+           
+               
+           </table>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        var vx  = document.getElementById('vx');
+        // X
+        var vx1 = document.getElementById('vx1');
+        var vx2 = document.getElementById('vx2');
+        var vx3 = document.getElementById('vx3');
+        var vx4 = document.getElementById('vx4');
+        var vx5 = document.getElementById('vx5');
+        var vx6 = document.getElementById('vx6');
+        var vx7 = document.getElementById('vx7');
+        var vx8 = document.getElementById('vx8');
+    
+
+        // Event
+
+        vx.onkeyup = function() {
+            
+            let valx = this.value;
+
+            if(valx.length > 0 && valx.length <= 3){
+
+                vx = parseInt(valx);
+                // - - - - - - - -
+                vx1.innerText = (vx==8);
+                // - - - - - - - -
+                vx2.innerText = (vx===5);
+                // - - - - - - - -  
+                vx3.innerText = (vx!=8);
+                // - - - - - - - -
+                vx4.innerText = (vx!==5);
+                // - - - - - - - -  
+                vx5.innerText = (vx>8);
+                // - - - - - - - -  
+                vx6.innerText = (vx<8);
+                // - - - - - - - -  
+                vx7.innerText = (vx>=8);
+                // - - - - - - - -
+                vx8.innerText = (vx<=8);
+                // - - - - - - - -       
+            }
+        }
+    </script>
+</body>
+</html>

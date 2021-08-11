@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Assignment</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+        table tr th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        table tr th input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 8px;
+        }
+        table tr:nth-child(odd) {
+            background-color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #edd312;
+        }
+        table tr td {
+            text-align: center;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Operator Assignment</h1>
+        </header>
+
+        <section>
+           <table>
+               <tr>
+                   <th colspan="5">
+                       <input type="number" id="vx" placeholder="Valor de X">
+                       <input type="number" id="vy" placeholder="Valor de Y">
+                    </th>
+                </tr>
+                <tr>
+                   <th>Operator</th>
+                   <th>Example</th>
+                   <th>Equal</th>
+                   <th>Result</th>
+                </tr>
+                <tr>
+                   <td>=</td>
+                   <td>x = y</td>
+                   <td>x=5</td>
+                   <td id="vx1"></td>
+                </tr>
+                <tr>
+                    <td>+=</td>
+                    <td>x += y</td>
+                    <td>x = x + y</td>
+                    <td id="vx2"></td>
+                </tr>
+                <tr>
+                    <td>-=</td>
+                    <td>x -= y</td>
+                    <td>x = x - y</td>
+                    <td id="vx3"></td>
+                </tr>
+                <tr>
+                    <td>*=</td>
+                    <td>x *= y</td>
+                    <td>x = x * y</td>
+                    <td id="vx4"></td>
+                </tr>
+                <tr>
+                    <td>/=</td>
+                    <td>x /= y</td>
+                    <td>x = x / y</td>
+                    <td id="vx5"></td>
+                </tr>
+                <tr>
+                    <td>%=</td>
+                    <td>x %= y</td>
+                    <td>x = x % y</td>
+                    <td id="vx6"></td>
+                </tr>
+                
+           </table>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        var vy  = document.getElementById('vy');
+        var vx  = document.getElementById('vx');
+        // X
+        var vx1 = document.getElementById('vx1');
+        var vx2 = document.getElementById('vx2');
+        var vx3 = document.getElementById('vx3');
+        var vx4 = document.getElementById('vx4');
+        var vx5 = document.getElementById('vx5');
+        var vx6 = document.getElementById('vx6');
+      
+        // Function
+        function results(vx, vy) {   
+
+                dx = parseInt(vx);
+                vx = parseInt(vx);
+                vy = parseInt(vy);
+                // - - - - - - - -
+                vx1.innerText = vy;
+                // - - - - - - - -
+                vx = dx;
+                vx2.innerText = (vx+=vy);
+                // - - - - - - - -  
+                vx = dx;
+                vx3.innerText = (vx-=vy);
+                // - - - - - - - -
+                vx = dx;
+                vx4.innerText = (vx*=vy);
+                // - - - - - - - -  
+                vx = dx;
+                vx5.innerText = (vx/=vy);
+                // - - - - - - - -  
+                vx = dx;
+                vx6.innerText = (vx%=vy);
+        }
+
+        // Events
+
+        vx.onkeyup = function() {
+            let valx = this.value;
+            let valy = vy.value;
+            if(valx.length > 0 && valx.length <= 3 &&
+               valy.length > 0 && valy.length <= 3) {
+                results(valx, valy);
+            }
+        }
+        vy.onkeyup = function() {
+            let valx = vx.value;
+            let valy = this.value;
+            if(valy.length > 0 && valy.length <= 3 &&
+               valx.length > 0 && valx.length <= 3) {
+                results(valx, valy);
+            }
+        }        
+    </script>
+</body>
+</html>

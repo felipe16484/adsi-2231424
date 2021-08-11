@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logical</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+            width: 80%;
+        }
+        table tr th {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        table tr th input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 8px;
+        }
+        table tr:nth-child(odd) {
+            background-color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #edd312;
+        }
+        table tr td {
+            text-align: center;
+            padding: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Operator Logical</h1>
+        </header>
+
+        <section>
+           <table>
+               <tr>
+                   <th colspan="4">
+                       <input type="number" id="vx" placeholder="Valor de X">
+                       <input type="number" id="vy" placeholder="Valor de Y">
+                    </th>
+                </tr>
+                <tr>
+                   <th>Operator</th>
+                   <th>Description</th>
+                   <th>Example</th>
+                   <th>Result</th>
+                </tr>
+                <tr>
+                   <td>&&</td>
+                   <td>AND</td>
+                   <td>(x < 10 && y > 1)</td>
+                   <td id="rs1"></td>
+                </tr>
+                <tr>
+                    <td>||</td>
+                    <td>OR</td>
+                    <td>(x == 5 || y == 1)</td>
+                    <td id="rs2"></td>
+                 </tr>
+                 <tr>
+                    <td>!</td>
+                    <td>NOT</td>
+                    <td>!(x==y)</td>
+                    <td id="rs3"></td>
+                 </tr>          
+           </table>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        var vy  = document.getElementById('vy');
+        var vx  = document.getElementById('vx');
+        
+        var rs1 = document.getElementById('rs1');
+        var rs2 = document.getElementById('rs2');
+        var rs3 = document.getElementById('rs3');
+       
+      
+        // Function
+        function results(vx, vy) {   
+
+                vx = parseInt(vx);
+                vy = parseInt(vy);
+                // - - - - - - - -
+                rs1.innerText = (vx < 10 && vy > 1);
+                // - - - - - - - -
+                rs2.innerText = (vx == 5 || vy == 1);
+                // - - - - - - - -  
+                rs3.innerText = !(vx==vy);   
+        }
+
+        // Events
+
+        vx.onkeyup = function() {
+            let valx = this.value;
+            let valy = vy.value;
+            if(valx.length > 0 && valx.length <= 3 &&
+               valy.length > 0 && valy.length <= 3) {
+                results(valx, valy);
+            }
+        }
+        vy.onkeyup = function() {
+            let valx = vx.value;
+            let valy = this.value;
+            if(valy.length > 0 && valy.length <= 3 &&
+               valx.length > 0 && valx.length <= 3) {
+                results(valx, valy);
+            }
+        }        
+    </script>
+</body>
+</html>

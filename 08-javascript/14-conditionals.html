@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        section {
+            text-align: center;
+        }
+        input {
+            border: 1px solid #edd312;
+            border-radius: 40px;
+            font-size: 1.5rem;
+            outline: none;
+            padding: 10px;
+            text-align: center;
+        }
+        button {
+            border: none;
+            background: #edd312;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 1rem;
+            outline: none;
+            padding: 12px 24px;
+            text-align: center;
+        }
+        output {
+            transition: all 0.4s ease-out;
+            border-radius: 10px;
+            display: block;
+            font-size: 1.5rem;
+            padding: 20px;
+            margin: 40px auto;
+            width: 340px;
+        }
+        .success {
+            border: 2px solid #5a874f;
+            background-color: #9cdb8c;
+            color: #5a874f;
+        }
+        .fail {
+            border: 2px solid #773636;
+            background-color: #c25858;
+            color: #773636;
+        }
+        hr {
+            border: .5px solid #edd312;
+        }
+        div#day {
+            border: 2px solid #edd312;
+            border-radius: 10px;
+            background-color: #fff;
+            font-size: 3rem;
+            padding: 20px;
+            margin: 40px auto;
+            width: 380px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Conditionals</h1>
+        </header>
+        <section>
+           <h2>How much is (4+2*3)?</h2>
+           <input type="number" id="answer">
+           <button type="button">Calculate</button>
+           <output id="result"></output>
+           <hr>
+           <div id="day"></div>
+        </section>
+    </main>
+
+    <script>
+        
+        // Variables
+        const btn = document.querySelector('button');
+        var   rsl = document.getElementById('result');
+        var  date = new Date();
+        var   day = document.getElementById('day');
+        // Events
+        btn.onclick = function() {
+            let ans = document.getElementById('answer').value;
+            rsl.classList.remove('success', 'fail');
+            if(ans.length > 0) {
+                if (ans == 10) {
+                    rsl.classList.add('success');
+                    rsl.innerText = "Your answer is correct!"
+                } else {
+                    rsl.classList.add('fail');
+                    rsl.innerText = "Your answer isn't correct!"
+                }
+            }
+        }
+        // Switch - - -
+        switch (date.getDay()) {
+            case 1:
+                day.innerText = "Hoy es Lunes."
+                break;
+            case 2:
+                day.innerText = "Hoy es Martes."
+                break;
+            case 3:
+                day.innerText = "Hoy es Miércoles."
+                break;
+            case 4:
+                day.innerText = "Hoy es Jueves."
+                break;
+            case 5:
+                day.innerText = "Hoy es Viernes."
+                break;
+            case 6:
+                day.innerText = "Hoy es Sábado."
+                break;
+            case 7:
+                day.innerText = "Hoy es Domingo."
+                break;        
+            default:
+                break;
+        }
+    </script>
+
+</body>
+</html>
