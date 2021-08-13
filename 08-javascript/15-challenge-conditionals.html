@@ -4,22 +4,252 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Challenge Conditionals</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rochester&display=swap" rel="stylesheet">
+    <style>
+
+        /* General */
+        * {transition: all .3s linear;}
+        output,
+        input {font-family: 'Rochester', cursive;}
+        .dissable {display: none;}
+
+        /* Base */
+        div.base {
+            background: url(/08-javascript/imgs/Conditionals/base.png) no-repeat center;
+            height: 896px;
+            margin: 0px auto;
+            padding: 0;
+            position: relative;
+            width: 580px;
+        }
+
+        /* Base - information */
+        div.base.information{
+            background: url(/08-javascript/imgs/Conditionals/base-information.png) no-repeat center;
+        }
+        div.base.information div.picture.pictureMale {
+            background: url(/08-javascript/imgs/Conditionals/male.png) no-repeat center;
+            height: 193px;
+            padding: 0;
+            position: absolute;
+            right: 203px;
+            top: 207px;
+            width: 173px;
+        }
+        div.base.information div.picture.pictureFemale {
+            background: url(/08-javascript/imgs/Conditionals/female.png) no-repeat center;
+            height: 193px;
+            padding: 0;
+            position: absolute;
+            right: 203px;
+            top: 207px;
+            width: 173px;
+        }
+        
+        div.base.information output.informationSent {
+            background: url(/08-javascript/imgs/Conditionals/informationSent.png) no-repeat center;
+            height: 145px;
+            font-size: 25px;
+            padding: 0;
+            position: absolute;
+            top: 479px;
+            text-align: center;
+            right: 58px;
+            width: 462px;
+        }
+        div.base.information button.validateInformation{ background: url(/08-javascript/imgs/Conditionals/validate-back-button.png) no-repeat center !important;}
+        /* Selec Gender */
+        div.base div.male{
+            background: url(/08-javascript/imgs/Conditionals/male.png) no-repeat center;
+            height: 193px;
+            padding: 0;
+            position: absolute;
+            right: 320px;
+            top: 202px;
+            width: 173px;
+        }
+        div.base div.female{
+            background: url(/08-javascript/imgs/Conditionals/female.png) no-repeat center;
+            height: 193px;
+            padding: 0;
+            position: absolute;
+            right: 75px;
+            top: 202px;
+            width: 173px;
+        }
+        div.base.information input#nickname,
+        div.base.information input#birthday{ z-index: -10000; }
+
+        /* Selec Gender - Function - Checked */
+        
+        div.base div.male.checked { background: url(/08-javascript/imgs/Conditionals/male-checked.png) no-repeat center; }
+        div.base div.female.checked { background: url(/08-javascript/imgs/Conditionals/female-checked.png) no-repeat center; }
+
+        /* Inputs */
+
+        input[type="date"]::-webkit-calendar-picker-indicator {background: none;}
+
+        input#nickname {
+            background: url(/08-javascript/imgs/Conditionals/nickname-input.png) no-repeat center;
+            border: none;
+            height: 65px;
+            font-size: 35px;
+            padding: 0;
+            position: absolute;
+            right: 84px;
+            top: 486px;
+            text-align: center;
+            width: 412px;
+        }
+        input#birthday {
+            background: url(/08-javascript/imgs/Conditionals/birthday-input.png) no-repeat center;
+            border: none;
+            height: 65px;
+            font-size: 35px;
+            padding: 0;
+            position: absolute;
+            right: 84px;
+            top: 619px;
+            text-align: center;
+            text-indent: 60px;         
+            width: 412px;
+        }
+
+        /* Buttons: Validate - GoBack */
+        button#validate {
+            background: url(/08-javascript/imgs/Conditionals/validate-button.png) no-repeat center;
+            border: none;
+            height: 70px;
+            padding: 0;
+            position: absolute;
+            right: 191px;
+            top: 755px;
+            width: 198px;
+        }
+    </style>
 </head>
 <body>
     <main>
         <header>
-            <h1><span><a href="index.html">&larr;</a></span></h1>
+            <h1><span><a href="index.html">&larr;</a></span>Challenge Conditionals</h1>
         </header>
         <section>
-           
+            <div class="base" id="base">
+                <div class="male" id="male"></div>
+                <div class="female" id="female"></div>
+                <div class="picture dissable" id="pictureSent"></div>
+                <output class="informationSent dissable" id="informationSent"></output>
+                <input class="" type="text" id="nickname">
+                <input class="" type="date" id="birthday">
+                <button class="" type="button" id="validate"></button>
+            </div>
         </section>
     </main>
 
     <script>
-        
-    </script>
 
+        // Variables
+
+        var baseInformation = document.getElementById('base');            
+        var maleChecked     = document.getElementById('male');
+        var femaleChecked   = document.getElementById('female');        
+        var pictureSelected = document.getElementById('pictureSent');
+        var informationSent = document.getElementById('informationSent'); 
+        var validateButton  = document.getElementById('validate');        
+        var gender = "";
+
+        /* - - - - - - - - - - - - Events - - - - - - - - - - - - */
+
+        // Gender Selection
+
+        maleChecked.onclick = function() {
+            maleChecked.classList.add('checked');
+            femaleChecked.classList.remove('checked');
+            checked = male.classList.contains('checked');
+
+            if(checked){
+                maleChecked.onclick = function(){
+                    maleChecked.classList.toggle('checked');
+                    femaleChecked.classList.remove('checked');
+                }
+            }
+            
+            gender = "Male";    
+            console.log(gender)
+        }
+
+        femaleChecked.onclick = function() {            
+            femaleChecked.classList.add('checked');
+            maleChecked.classList.remove('checked');
+            checked = female.classList.contains('checked');
+
+            if(checked){
+                femaleChecked.onclick = function(){
+                    femaleChecked.classList.toggle('checked');
+                    maleChecked.classList.remove('checked');
+                }
+            }
+            gender = "Female";
+            console.log(gender)
+        }
+
+        
+
+        // Information Validate       
+
+        validateButton.onclick = function() {
+
+            var nicknameInput   = document.getElementById('nickname').value;            
+            var birthdayInput   = document.getElementById('birthday').value;
+
+            if (nicknameInput.length > 0 && birthdayInput.length > 0){     
+                           
+                baseInformation.classList.toggle('information');
+                maleChecked.classList.toggle('dissable');
+                femaleChecked.classList.toggle('dissable');
+                pictureSelected.classList.toggle('dissable');
+                informationSent.classList.toggle('dissable');
+                validateButton.classList.toggle('validateInformation');
+                maleChecked.classList.remove('checked');
+                femaleChecked.classList.remove('checked');
+
+                if(gender=="Male"){
+                    pictureSelected.classList.toggle('pictureMale');
+                    pictureSelected.classList.remove('pictureFemale');             
+                    console.log(gender);       
+                    gender = "Male";
+                }
+                else {
+                    if(gender=="Female"){
+                        pictureSelected.classList.toggle('pictureFemale');
+                        pictureSelected.classList.remove('pictureMale');
+                        console.log(gender)
+                        gender = "Female";
+                    }
+                }
+                var status = ""        
+                var minDate = new Date(2002, 10, 08)
+                var userDate = new Date(birthdayInput)
+
+                if (userDate < minDate && gender == "Male") {
+                    status = "Puede prestar servicio.";
+                }else{
+                    status = "No puede prestar servicio.";
+                }
+                document.getElementById('informationSent').innerHTML = nicknameInput;
+                document.getElementById('informationSent').innerHTML += "<br>" +  birthdayInput;
+                document.getElementById('informationSent').innerHTML += "<br>" +  gender;
+                document.getElementById('informationSent').innerHTML += "<br>" +  status;            
+            }
+        }    
+        // Birthday       
+        
+
+
+    </script>
 </body>
 </html>

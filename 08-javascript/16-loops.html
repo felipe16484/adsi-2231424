@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+
+        }
+        ul li {
+            border: 1px solid #edd312;
+            color: #666;
+            display: inline-block;
+            height: 20px;
+            list-style: none;
+            margin: 2px;
+            padding: 4px;
+            text-align: center;
+            min-width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Loops</h1>
+        </header>
+        <section>
+           <h2>Loop (for)</h2>
+           <p>Print even numbers from 1 to 50</p>
+           <ul id="loopfor"></ul>
+
+           <h2>Loop (forin)</h2>
+           <p>Print objects porperties</p>
+           <ul id="loopforin"></ul>
+
+           <h2>Loop (while)</h2>
+           <p>Print from 0 to 50</p>
+           <ul id="loopwhile"></ul>
+
+           <h2>Loop (DoWhile)</h2>
+           <p>Factorial (N!) -> (5!)</p>
+           <ul id="loopdowhile"></ul>
+           
+           <h2>(Break)</h2>
+           <p>Fibonacci (144)<p>
+           <ul id="loopbreak"></ul>
+        </section>
+    </main>
+
+    <script>
+        
+        // Variables
+        const loopfor   = document.getElementById('loopfor');
+        const loopforin = document.getElementById('loopforin');
+        const loopwhile = document.getElementById('loopwhile');
+        const loopdowhile = document.getElementById('loopdowhile');
+        const loopbreak = document.getElementById('loopbreak');
+        const anime     = {
+            name: 'Jujutsu Kaisen',
+            season: 1,
+            year: 2020,
+            caps: 24
+        }
+        // Loop for
+        for(let i = 0; i <= 50 ; i++)
+        {
+            if (i%2==0) {
+                loopfor.innerHTML += "<li>"+i+"</li>";          
+            }
+        }
+        // Loop For In
+        for (let i in anime) {
+            loopforin.innerHTML += "<li>"+ i +": "+anime[i]+"</li>";            
+        }
+        // Loop While
+        var i = 0;
+        while (i <= 50) {
+            if(i%5==0){
+                loopwhile.innerHTML += "<li>"+ i +"</li>";
+            }
+            i++;
+        }
+        // Loop Do While
+        var inx   = 1;
+        var nfact = 5;
+        var fact  = 1;
+        loopdowhile.innerHTML = "<li> 5! = </li>"
+        do {
+            fact *= inx;
+            loopdowhile.innerHTML += "<li>"+ fact +"</li>";
+            inx++;
+        } while (inx<=nfact);
+
+        // Loop Break
+        var actual = 1;
+        var prev = 0;
+        var suma = 0;
+        loopbreak.innerHTML = "<li>" + prev + "</li>" + "<li>" + actual + "</li>";;
+        for (let i = 1; i <= 50; i++) {
+            sum=actual+prev;
+            prev=actual;
+            actual=sum;
+            loopbreak.innerHTML += "<li>" + sum + "</li>";
+            if(i==10){
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
