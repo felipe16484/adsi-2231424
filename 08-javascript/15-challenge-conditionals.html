@@ -138,6 +138,7 @@
             <h1><span><a href="index.html">&larr;</a></span>Challenge Conditionals</h1>
         </header>
         <section>
+            
             <div class="base" id="base">
                 <div class="male" id="male"></div>
                 <div class="female" id="female"></div>
@@ -169,15 +170,14 @@
         maleChecked.onclick = function() {
             maleChecked.classList.add('checked');
             femaleChecked.classList.remove('checked');
-            checked = male.classList.contains('checked');
+            /* checked = male.classList.contains('checked');
 
             if(checked){
                 maleChecked.onclick = function(){
                     maleChecked.classList.toggle('checked');
                     femaleChecked.classList.remove('checked');
                 }
-            }
-            
+            } */            
             gender = "Male";    
             console.log(gender)
         }
@@ -185,19 +185,17 @@
         femaleChecked.onclick = function() {            
             femaleChecked.classList.add('checked');
             maleChecked.classList.remove('checked');
-            checked = female.classList.contains('checked');
+            /* checked = female.classList.contains('checked');
 
             if(checked){
                 femaleChecked.onclick = function(){
                     femaleChecked.classList.toggle('checked');
                     maleChecked.classList.remove('checked');
                 }
-            }
+            } */
             gender = "Female";
             console.log(gender)
-        }
-
-        
+        }       
 
         // Information Validate       
 
@@ -245,11 +243,7 @@
                 document.getElementById('informationSent').innerHTML += "<br>" +  gender;
                 document.getElementById('informationSent').innerHTML += "<br>" +  status;            
             }
-        }    
-        // Birthday       
-        
-
-
+        }
     </script>
 </body>
 </html>
