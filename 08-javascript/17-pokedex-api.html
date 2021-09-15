@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex API</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    figure.pokedex {
+        background: #670000;
+        border-radius: 40px;
+        height: 720px;
+        left: 7px;
+        position: relative;
+        margin: 10px auto;
+        top: 8px;
+        width: 400px;
+    }
+    figure.pokedex.stage02 {
+        background: url(/08-javascript/imgs/Pokedex/02-muckup-list.png)no-repeat;
+    }
+    figure.pokedex h4{
+        color: #fff;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17.8px;
+        height: 22px;
+        left: 143px;
+        position: absolute;
+        top: 41px;
+        /* identical to box height */
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 114px;
+    }
+    figure.pokedex h1{
+        color: #DFBB00;
+        position: absolute;
+        width: 156px;
+        height: 37px;
+        left: 122px;
+        top: 62px;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30.2px;
+        /* identical to box height */
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    figure.pokedex img.pokemon-logo {
+        position: absolute;
+        width: 315px;
+        height: 138px;
+        left: 39px;
+        top: 143px;        
+    }
+    figure.pokedex img.water01 {
+        position: absolute;
+        width: 371px;
+        height: 371px;
+        left: 14px;
+        top: 117px;
+    }
+    figure.pokedex img.main-image {
+        position: absolute;
+        width: 353px;
+        height: 263px;
+        left: 20px;
+        top: 334px;
+    }
+    figure.pokedex button.btn-enter {
+        background: #DFBB00;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        color: #2E4595;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        position: absolute;        
+        height: 49px;
+        left: 20px;
+        top: 623px;
+        width: 360px;
+        transition: transform 0.1s ease-out;
+    }
+    figure.pokedex button.btn-enter:hover {
+        transform: scale(1.05);
+    }
+    figure.pokedex button.btn-back{
+        background: url(/08-javascript/imgs/Pokedex/back.png)  no-repeat center;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        left: 22px;
+        top: 17px;
+        transition: transform 0.2s ease-out;
+    }
+    figure.pokedex button.btn-back:hover{
+        transform: scale(1.03) translate(-5px);  
+    }
+    figure.stage02 h1 {
+        color: #DFBB00;
+        position: absolute;
+        width: 156px;
+        height: 37px;
+        left: 117px;
+        top: 38px;
+
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 30.2px;
+        /* identical to box height */
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    figure.stage02 img.water02{
+        position: absolute;
+        width: 130px;
+        height: 130px;
+        left: 132px;
+        top: 17px;
+    }
+</style>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a></span>Pokedex API</h1>
+        </header>
+        <section>
+            <figure class="pokedex stage01">
+                <h4>Welcome to</h4>
+                <h1>POKEDEX</h1>
+                <img class="pokemon-logo" src="/08-javascript/imgs/Pokedex/pokemon-logo.png" alt="">
+                <img class="water01" src="/08-javascript/imgs/Pokedex/water-mark-pokeball.png" alt="">
+                <img class="main-image" src="/08-javascript/imgs/Pokedex/main-image.png" alt="">
+                <button class="btn-enter">Let's see!</button>
+            </figure>
+            <figure class="pokedex stage02">
+                <button class="btn-back"></button>
+                <h1>POKEDEX</h1>
+                <img class="water02" src="/08-javascript/imgs/Pokedex/water-mark-pokeball-stage02.png" alt="">
+            </figure>
+            <figure class="pokedex stage03">
+
+            </figure>
+        </section>
+    </main>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

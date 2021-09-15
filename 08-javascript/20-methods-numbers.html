@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Numbers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Methods Numbers</h1>
+        </header>
+        <section>
+            <input type="number" id="num" placeholder="Number with decimals">
+            <br>
+            <button id="btnCalc"> Calculate </button>
+            <br><br>
+            <ul id="output"></ul>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+		var btn  = document.getElementById('btnCalc');
+		var outp = document.getElementById('output');
+
+		// Events
+		btn.onclick = function() {
+			let num = document.getElementById('num').value;
+			if(num.length > 0) {
+				let fnum = parseFloat(num);
+				outp.innerHTML  = "<li>String: '"+fnum.toString()+"'</li>";
+				outp.innerHTML += "<li>Fixed: "+fnum.toFixed(0)+"</li>";
+				outp.innerHTML += "<li>Precision: "+fnum.toPrecision(3)+"</li>";
+				outp.innerHTML += "<li>Integer: "+parseInt(fnum)+"</li>";
+				outp.innerHTML += "<li>Float: "+fnum+"</li>";
+			} else {
+				alert("You must enter a number with decimals!");
+			}
+		}
+    </script>
+    
+</body>
+</html>

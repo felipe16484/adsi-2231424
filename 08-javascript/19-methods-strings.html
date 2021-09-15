@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Strings</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Methods Strings</h1>
+        </header>
+        <section>
+            <textarea id="string" cols="60" rows="4" placeholder="Enter Text"></textarea>
+            <br>
+            <label for="toLower">
+                <input type="radio" id="toLower" value="tl" name="transf"> lowercase
+            </label>
+            <br>
+            <label for="toUpper">
+                <input type="radio" id="toUpper" value="tu" name="transf"> UPPERCASE
+            </label>
+            <br>
+            <input type="text" id="oword" placeholder="Origin">
+            for 
+            <input type="text" id="rword" placeholder="Peplacement">
+            <br>
+            <input type="number" id="ni" placeholder="Pos Init">
+            to 
+            <input type="number" id="nf" placeholder="Pos Final">
+            <br><br>
+            <button id="btnAnalize"> Analyze String </button>
+            <br><br>
+            <ul id="data"></ul>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+		var string     = document.getElementById('string');
+		var toLower    = document.getElementById('toLower');
+		var toUpper    = document.getElementById('toUpper');
+		var btnAnalize = document.getElementById('btnAnalize');
+		var data       = document.getElementById('data');
+		var oword      = document.getElementById('oword');
+		var rword      = document.getElementById('rword');
+		var ni         = document.getElementById('ni');
+		var nf         = document.getElementById('nf');
+		var data       = document.getElementById('data');
+		var upper      = false;
+
+		// Envents
+		toLower.onchange = function() {
+			upper = false;
+		}
+		toUpper.onchange = function() {
+			upper = true;
+		}
+		btnAnalize.onclick = function() {
+			var tstring = string.value;
+			var toword  = oword.value;
+			var trword  = rword.value;
+			var tni     = parseInt(ni.value);
+			var tnf     = parseInt(nf.value);
+			if(upper) {
+				data.innerHTML = "<li>"+tstring.toUpperCase()+"</li>";
+			} else {
+				data.innerHTML = "<li>"+tstring.toLowerCase()+"</li>";
+			}
+			data.innerHTML += "<li> String Length: "+tstring.length+" characters</li>"
+			data.innerHTML += "<li> Replacement String: "+tstring.replace(toword, trword)+"</li>";
+			data.innerHTML += "<li> Cut String: "+tstring.substring(tni, tnf)+"</li>";
+			
+		}
+    </script>
+    
+</body>
+</html>

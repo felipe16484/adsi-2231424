@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events JS</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="wellcome();" id="bd">
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Events JS</h1>
+        </header>
+        <section>
+            <h3>Double Click</h3>
+            <button id="btnDC"> # double clicks = 0 </button>
+            <h3>Release Key</h3>
+            <input type="text" id="iname" placeholder="Enter Full Name">
+            <output id="pname"></output>
+            <h3>Resize Window</h3>
+            <output id="wbd"></output>
+            <h3>Change Value</h3>
+            <select id="bgcolor">
+                <option value="">Select Background Color...</option>
+                <option value="1">Orange</option>
+                <option value="2">Pink</option>
+                <option value="3">Yellow</option>
+            </select>
+            <h3>mouse(OVER/OUT)</h3>
+            <img id="imgk" src="imgs/kny1.jpg"  width="280">
+        </section>
+    </main>
+
+    <script>
+        // Variables
+		var btnDC   = document.getElementById('btnDC');
+		var iname   = document.getElementById('iname');
+		var pname   = document.getElementById('pname');
+		var bd      = document.getElementById('bd');
+		var wbd     = document.getElementById('wbd');
+		var bgcolor = document.getElementById('bgcolor');
+		var imgk    = document.getElementById('imgk');
+
+		var cntDC   = 0;
+		// Events
+		btnDC.ondblclick = function() {
+			this.innerHTML = "# double clicks = "+cntDC++;
+		}
+		iname.onkeyup = function() {
+			pname.value = this.value;
+		}
+		bd.onresize = function() {
+			wbd.innerHTML = "Window width: "+window.outerWidth+" px";
+		}
+		bgcolor.onchange = function() {
+			if(this.value == '') {
+				bd.style.backgroundColor = "white";
+			}
+			if(this.value == '1') {
+				bd.style.backgroundColor = "orange";
+			}
+			if(this.value == '2') {
+				bd.style.backgroundColor = "pink";
+			}
+			if(this.value == '3') {
+				bd.style.backgroundColor = "yellow";
+			}
+		}
+		imgk.onmouseover = function() {
+			this.src = "imgs/kny2.jpg";
+			//this.setAttribute("src", "imgs/kny2.jpg");
+		}
+		imgk.onmouseout = function() {
+			this.src = "imgs/kny1.jpg";
+			//this.setAttribute("src", "imgs/kny1.jpg");
+
+		}
+		// Functions
+		function wellcome() {
+			alert("Welcome:\nThe page has been loaded successfully!");
+		}
+    </script>
+    
+</body>
+</html>
