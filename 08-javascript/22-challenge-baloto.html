@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Baloto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        /* Modificaciones generales */        
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number]:focus{
+            outline:none;
+        }
+        input[type=number] { -moz-appearance:textfield; font-family: 'Rock Salt', cursive;  }
+        
+        .animate__zoomInDown{
+            animation: zoomInDown;
+            animation-duration: 0.8s;
+        }
+
+        .display {
+            display: none;
+        }
+
+        /* Base */
+        section.base {
+            *background: url(/08-javascript/imgs/Baloto/base-try.png) no-repeat center;
+            background: url(/08-javascript/imgs/Baloto/base.png) no-repeat center;
+            height: 650px;
+            font-family: 'Rock Salt', cursive;
+            margin: 0px auto;
+            padding: 0;
+            position: relative;
+            width: 1184px;
+        }
+        /* Textos */
+        section.base p.ghetto {
+            color: #000000;
+            cursor: context-menu;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 82px;
+            height: 171px;
+            left: 46px;
+            line-height: 196px;
+            position: absolute;
+            top: -80px;
+            text-shadow: 0px -5px 4px rgba(255, 255, 255, 0.95), 0px 6px 4px #BD1564;
+            width: 813px;
+        }
+        section.base p.lucky {
+            color: #000000;
+            cursor: context-menu;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 55px;
+            height: 131px;
+            left: 306px;
+            line-height: 131px;
+            position: absolute;
+            top: 175px;
+            text-shadow: 0px -5px 4px rgba(255, 255, 255, 0.95), 0px 6px 4px #BD1564;
+            transform: rotate(26deg);
+            width: 505px;
+        }
+        section.base p.type {
+            color: #FFFFFF;
+            cursor: context-menu;
+            font-family: Rock Salt;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 21px;
+            height: 50px;
+            left: 845px;
+            line-height: 50px;
+            position: absolute;
+            top: 137px;
+            text-shadow: 0px 5px 4px #BD1564, 0px 4px 4px #BF1363;
+            width: 248px;
+        }
+        section.base p.luckyNumber1,
+        section.base p.luckyNumber2,
+        section.base p.luckyNumber3,
+        section.base p.luckyNumber4,
+        section.base p.luckyNumber5,
+        section.base p.luckyBalota {
+            color: #FFFFFF;
+            cursor: context-menu;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 21px;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            text-shadow: -3px -2px 4px #0187D2, 0px 5px 4px #BD1564, 0px 4px 4px #BF1363;
+            transform: rotate(-14deg);
+            width: 126px;
+        }
+        section.base p.luckyNumber1 {
+            top: 140px;
+            left: 56px;
+        }
+        section.base p.luckyNumber2 {
+            top: 201px;
+            left: 191px;
+        }
+        section.base p.luckyNumber3 {
+            top: 260px;
+            left: 321px;
+            width: 130px;
+        }
+        section.base p.luckyNumber4 {
+            top: 320px;
+            left: 453px;
+        }
+        section.base p.luckyNumber5 {
+            top: 380px;
+            left: 579px;
+            width: 129px;
+        }
+        section.base p.luckyBalota {
+            top: 399px;
+            left: 106px;
+            width: 184px;
+        }
+
+        /* Inputs de los números a digitar */
+        section.base input.typingNumber1,
+        section.base input.typingNumber2,
+        section.base input.typingNumber3,
+        section.base input.typingNumber4,
+        section.base input.typingNumber5,
+        section.base input.typingBalota {
+            background: url(/08-javascript/imgs/Baloto/typingSquare.png) no-repeat;
+            border: none;
+            cursor: pointer;
+            height: 54px;
+            text-align: center;
+            position: absolute;
+            width: 54px;
+        }
+        section.base input.typingNumber1 {
+            top: 214px;
+            left: 774px;
+        }
+        section.base input.typingNumber2 {
+            top: 214px;
+            left: 832px;
+        }
+        section.base input.typingNumber3 {
+            top: 214px;
+            left: 890px;
+        }
+        section.base input.typingNumber4 {
+            top: 214px;
+            left: 948px;
+        }
+        section.base input.typingNumber5 {
+            top: 214px;
+            left: 1006px;
+        }
+        section.base input.typingBalota {
+            top: 214px;
+            left: 1100px;
+        }
+
+        /* Botones */
+        section.base button.btn-start,
+        section.base button.btn-reset {
+            border: none;
+            cursor: pointer;
+            height: 71px;
+            position: absolute;
+            transition: all 0.1s ease-out;
+            width: 202px;
+        }
+        section.base button.btn-start {
+            background: url(/08-javascript/imgs/Baloto/btn-start.png) no-repeat;
+            left: 897px;
+            top: 333px;
+        }
+        section.base button.btn-reset {
+            background: url(/08-javascript/imgs/Baloto/btn-reset.png) no-repeat;
+            left: 897px;
+            top: 431px;
+        }
+        section.base button.btn-start:hover,
+        section.base button.btn-reset:hover{
+            transform: scale(1.04);
+        }
+
+        /* Números Generados */
+        section.base p#number1,
+        section.base p#number2,
+        section.base p#number3,
+        section.base p#number4,
+        section.base p#number5,
+        section.base p#numberBalota {
+            background: url(/08-javascript/imgs/Baloto/bg-spanNumbers.png) no-repeat;
+            background-size: cover;
+            height: 150px;
+            position: absolute;
+            text-align: center;
+            line-height: 150px;
+            width: 150px;
+        }
+        section.base p#number1 {
+            top: 157px;
+            left: 50px;            
+        }
+        section.base p#number2 {
+            top: 218px;
+            left: 182px;
+        }
+        section.base p#number3 {
+            top: 278px;
+            left: 314px;
+        }
+        section.base p#number4 {
+            top: 338px;
+            left: 446px;
+        }
+        section.base p#number5 {
+            top: 398px;
+            left: 579px;
+        }
+        section.base p#numberBalota {
+            top: 420px;
+            left: 144px;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Challenge Baloto</span></h1>
+        </header>
+        <section class="base">
+            <p class="ghetto">Ghetto Fortune</p>
+            <p class="lucky">Lucky Numbers</p>
+            <p class="type">Type your numbers</p>
+            <p class="luckyNumber1">Number 1</p>
+            <p class="luckyNumber2">Number 2</p>
+            <p class="luckyNumber3">Number 3</p>
+            <p class="luckyNumber4">Number 4</p>
+            <p class="luckyNumber5">Number 5</p>
+            <p class="luckyBalota">Super Balota</p>
+            <input type="number" class="typingNumber1" id="typingNumber1">
+            <input type="number" class="typingNumber2" id="typingNumber2">
+            <input type="number" class="typingNumber3" id="typingNumber3">
+            <input type="number" class="typingNumber4" id="typingNumber4">
+            <input type="number" class="typingNumber5" id="typingNumber5">
+            <input type="number" class="typingBalota"  id="typingBalota">
+            <p id="number1" class="number display"></p>
+            <p id="number2" class="number display"></p>
+            <p id="number3" class="number display"></p>
+            <p id="number4" class="number display"></p>
+            <p id="number5" class="number display"></p>
+            <p id="numberBalota" class="display"></p>
+            <button class="btn-start" id="btn-start"></button>
+            <button class="btn-reset" id="btn-reset"></button>
+        </section>
+    </main>
+
+    <script>
+
+        // Variables
+        const btnStart    = document.getElementById('btn-start');
+        const btnReset    = document.getElementById('btn-reset');
+        var number1       = document.getElementById('number1');
+        var number2       = document.getElementById('number2');
+        var number3       = document.getElementById('number3');
+        var number4       = document.getElementById('number4');
+        var number5       = document.getElementById('number5');
+        var numberBalota  = document.getElementById('numberBalota');          
+
+        btnStart.onclick = function(){
+
+            const arrayAux      = []; 
+            const arrayBalota     = []; 
+
+            let typingNumber1 = document.getElementById('typingNumber1').value;
+            let typingNumber2 = document.getElementById('typingNumber2').value;
+            let typingNumber3 = document.getElementById('typingNumber3').value;
+            let typingNumber4 = document.getElementById('typingNumber4').value;
+            let typingNumber5 = document.getElementById('typingNumber5').value;
+            let typingBalota  = document.getElementById('typingBalota').value;
+                   
+
+            if (!typingNumber1.length > 0 && !typingNumber2.length > 0 && !typingNumber3.length > 0 && !typingNumber4.length > 0 && !typingNumber5.length > 0 && !typingBalota.length > 0)
+            {
+                alert("¡Hay uno o más números de su boleta que están vacíos!\nDiligencie los datos correctamente.");
+            }else{
+
+                number1.classList.add('animate__zoomInDown');
+                number2.classList.add('animate__zoomInDown');
+                number3.classList.add('animate__zoomInDown');
+                number4.classList.add('animate__zoomInDown');
+                number5.classList.add('animate__zoomInDown');
+                numberBalota.classList.add('animate__zoomInDown');
+                number1.classList.remove('display');
+                number2.classList.remove('display');
+                number3.classList.remove('display');
+                number4.classList.remove('display');
+                number5.classList.remove('display');
+                numberBalota.classList.remove('display');
+                
+                for (let i = 0; i < 5; i++) 
+                {
+                    // var rand = Math.ceil(Math.random()*(-2-arrayAux.length+1))+arrayAux.length; 
+
+                    var rand = Math.ceil(Math.random()*43);
+                    
+                    if(arrayAux.indexOf(rand) == -1){
+                        arrayAux[i] = rand;
+                    }else{
+                        i--;
+                    }                    
+                }
+
+                number1.innerText = arrayAux[0];
+                number2.innerText = arrayAux[1];
+                number3.innerText = arrayAux[2];
+                number4.innerText = arrayAux[3];
+                number5.innerText = arrayAux[4];
+
+                arrayBalota[0] = Math.ceil(Math.random()*16);
+                numberBalota.innerText = arrayBalota[0];
+                
+                if (typingNumber1 == arrayAux[0] && typingNumber2 == arrayAux[1] && typingNumber3 == arrayAux[2] && typingNumber4 == arrayAux[3] && typingNumber5 == arrayAux[4] && typingBalota == arrayBalota[0]){
+                    // alert("¡Ganaste el Baloto!");
+                    alert("¡Ganaste!")
+                }else{
+                    console.log("¡Mala Suerte!\nSigue intentando...");
+                }
+                
+            } 
+        }
+        
+        btnReset.onclick = function(){
+            window.location.replace('22-challenge-baloto.html');            
+        }
+        
+        
+        
+    </script>
+    
+</body>
+</html>
