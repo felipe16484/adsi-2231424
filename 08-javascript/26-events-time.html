@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Time</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        input, button {
+            font-size: 1.4rem;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Events Time</h1>
+        </header>
+        <section>
+            <h3>setInteval (CountDown)</h3>
+            <input type="number" id="count-down" placeholder="Time in seconds">
+            <button id="btn-count-down"> CountDown </button>
+            <h3>setTimeout (Refresh Page)</h3>
+            <input type="number" id="refresh-page" placeholder="Time in seconds">
+            <button id="btn-refresh-page">Refresh Page</button>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        const btnCountDown  = document.getElementById('btn-count-down');
+        const inputContDown = document.getElementById('count-down');
+        const btnRefresh    = document.getElementById('btn-refresh-page');
+
+        // Events
+        btnCountDown.onclick = function() {
+            let countDown = document.getElementById('count-down').value;
+            if (countDown.length > 0) {
+                countDown = parseInt(countDown);
+                // setInterval
+                let setIntr = setInterval(function() {
+                    if (countDown == 0) {
+                        inputContDown.value = countDown;
+                        clearInterval(setIntr);
+                    } else {
+                        inputContDown.value = countDown;
+                    }
+                    countDown--;
+                },1000);
+            } else {
+                alert('Please enter time in seconds!');
+            } 
+        }
+
+        btnRefresh.onclick = function() {
+            let refreshPage = document.getElementById('refresh-page').value;
+            if (refreshPage.length > 0) {
+                refreshPage = parseInt(refreshPage)*1000;
+                // setTimeout
+                setTimeout(function() {
+                    alert("It's time to refresh");
+                    window.location.replace('26-events-time.html');
+                },refreshPage);
+            } else {
+                alert('Please enter time in seconds!');
+            } 
+        }
+    </script>
+    
+</body>
+</html>

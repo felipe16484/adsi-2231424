@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Up Windows</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Pop Up Windows</h1>
+        </header>
+        <section>
+            <h3 class="answer"></h3>
+        </section>
+    </main>
+
+    <script>
+        // Variables
+        var answer = document.querySelector('h3.answer');
+
+        if (confirm('Are you ready for answer the next question?')) {
+            let userAnswer = prompt('7 * 3 is equal to?');
+            if (userAnswer == 21) {
+                answer.innerText = "The answer is correct!";
+            } else {
+                answer.innerText = "The answer is incorrect!";
+            }
+        } else {
+            alert('Thanks for nothing!');
+            answer.innerText = "Refresh page";
+        }
+    </script>
+    
+</body>
+</html>

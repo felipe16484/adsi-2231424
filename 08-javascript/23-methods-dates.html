@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Dates</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Methods Dates</span></h1>
+        </header>
+        <section>
+            <h3>GET:</h3>
+            <ul class="list-get"></ul>
+            <h3>SET:</h3>
+            <ul class="list-set"></ul>
+            
+        </section>
+    </main>
+
+    <script>
+        // Variables & Constants
+        const listGet = document.querySelector('ul.list-get'); 
+        const listSet = document.querySelector('ul.list-set'); 
+        var   todayDate = new Date;
+        var   futureDate = new Date('2026/06/15 08:15:50');
+
+        // Get
+        listGet.innerHTML  = "<li> Current Date: " + todayDate + "</li>";
+        listGet.innerHTML += "<li> Current Year: " + todayDate.getFullYear() + "</li>";
+        listGet.innerHTML += "<li> Current Month: " + (todayDate.getMonth()+1) + "</li>";
+        listGet.innerHTML += "<li> Current Weekday: " + todayDate.getDay() + "</li>";
+        listGet.innerHTML += "<li> Current Hours: " + todayDate.getHours() + "</li>";
+        listGet.innerHTML += "<li> Current Minutes: " + todayDate.getMinutes() + "</li>";
+        listGet.innerHTML += "<li> Current Seconds: " + todayDate.getSeconds() + "</li>";
+
+        // Set
+        listSet.innerHTML = "<li> Future Date: " + futureDate + "</li>";
+        futureDate.setFullYear(2022);
+        futureDate.setMonth(10);
+        futureDate.setDate(21);
+        listSet.innerHTML += "<li> Future Year: " + futureDate.getFullYear() + "</li>";
+        listSet.innerHTML += "<li> Future Month: " + (futureDate.getMonth()+1) + "</li>";
+        listSet.innerHTML += "<li> Future Weekday: " + futureDate.getDay() + "</li>";
+    </script>
+
+</body>
+</html>

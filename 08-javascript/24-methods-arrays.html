@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Arrays</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Methods Arrays</span></h1>
+        </header>
+        <section>
+           <ul class="array-emojis"></ul>
+        </section>
+    </main>
+
+    <script>
+        // Variables & Constants
+        const arrayEmojis = document.querySelector('ul.array-emojis');
+        var   emojis      = ['🐲', '🐱‍👤', '🦊', '🦘', '🦞'];
+
+        // valueof
+        arrayEmojis.innerHTML = "<li> valueOf: " +emojis.valueOf()+ "</li>";
+        // toString
+        arrayEmojis.innerHTML += "<li> toString: " +emojis.toString()+ "</li>";
+        // join
+        arrayEmojis.innerHTML += "<li> join: " +emojis.join('⚜')+ "</li>";
+        // sort
+        arrayEmojis.innerHTML += "<li> sort: " +emojis.sort()+ "</li>";
+        // reverse
+        arrayEmojis.innerHTML += "<li> reverse: " +emojis.reverse()+ "</li>";
+
+        // pop -> delete last one
+        emojis.pop();
+        arrayEmojis.innerHTML += "<li> pop: " +emojis.valueOf()+ "</li>";
+        // shift -> delete first one
+        emojis.shift();
+        arrayEmojis.innerHTML += "<li> shift: " +emojis.valueOf()+ "</li>";
+        // push -> add last one
+        emojis.push('🦚');
+        arrayEmojis.innerHTML += "<li> push: " +emojis.valueOf()+ "</li>";
+        // unshift -> add first one
+        emojis.unshift('🦑');
+        arrayEmojis.innerHTML += "<li> unshift: " +emojis.valueOf()+ "</li>";        
+        let animals = emojis.slice(1, 4);
+        arrayEmojis.innerHTML += "<li> slice: " +animals.valueOf()+ "</li>";
+    </script>
+
+</body>
+</html>
