@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool List</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+        figure.todolist {
+            background-color: #fff;
+            border-radius: 20px;
+            margin: 20px auto;
+            padding: 10px;
+            width: 400px;
+        }
+        figure.todolist header h3{
+            background-color: transparent;
+            color: #0769AD;
+            display: inline-block;
+            text-align: center;
+            width: 38%;
+        }
+        figure.todolist header {
+            border-bottom: 1px solid #0769AD;
+            margin-bottom: 20px;
+        }
+        figure.todolist table.list {
+            width: 100%;
+            border-bottom: 1px solid #0769AD;
+            padding-bottom: 35px;
+        }
+        figure.todolist table.list td {
+            padding: 10px;
+            position: relative;
+        }
+        figure.todolist table.list td button {
+            border: none;
+            border-radius: 20px;
+            background-color: #b80834;
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            padding: 10px 20px;
+            right: 0;
+        }
+        figure.todolist footer {
+            margin-top: 20px;
+        }
+        figure.todolist footer input.todo {
+            border: 1px solid #0980d4;
+            border-radius: 15px;
+            padding: 10px;
+            width: 291px;
+        }
+        figure.todolist footer button {
+            border: none;
+            border-radius: 20px;
+            background-color: #22a815;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 20px;
+            width: 79px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Tool List</span></h1>
+        </header>
+        <section>
+           <figure class="todolist">
+               <header>
+                   <h3> <span class="ntasks">1 Task</span></h3>
+                   <h3> <span class="nremains">1 Remain</span></h3>
+               </header>
+               <table class="list">
+                    <tr>
+                        <td> <input type="checkbox"> jQuery <button class="delete">Delete</button></td>
+                    </tr>                    
+               </table>
+               <footer>
+                   <input type="text" class="todo" placeholder="Add ToDo">
+                   <button class="btnAdd">Add</button>
+               </footer>
+           </figure>
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $ntasks = 1;
+            $nremains = 1;
+
+            // Función onclick <-----
+
+            // Add Task
+            $('.btnAdd').click(function(e){
+                e.preventDefault();
+                if ($('.todo').val().length > 0) {
+                    $('.list').append('<tr><td><input type="checkbox">'+ $('.todo').val() +'<button class="delete">Delete</button></td></tr>');
+                    $('.todo').val('');
+                    $ntasks++;
+                    $nremains++;
+                    if ($ntasks > 1){
+                        $('.ntasks').text($ntasks + " Tasks");
+                    }else{
+                        $('.ntasks').text($ntasks + " Task");
+                    }
+                    if ($nremains > 1){
+                    $('.nremains').text($nremains + " Remains");
+                    } else {
+                        $('.nremains').text($nremains + " Remain");
+                    }
+                }
+            });
+
+            // Delete Task
+            $('table').on('click', '.delete', function () {
+                $(this).closest('tr').remove();
+                $ntasks--;
+                if ($ntasks > 1){
+                    $('.ntasks').text($ntasks + " Tasks");
+                }else{
+                    $('.ntasks').text($ntasks + " Task");
+                }
+                if (!$(this).parent('td').children('input').prop('checked')){
+                    $nremains--;
+                    if ($nremains > 1){
+                    $('.nremains').text($nremains + " Remains");
+                    } else {
+                        $('.nremains').text($nremains + " Remain");
+                    }             
+                }
+            });
+
+            // Check Done
+            $('table').on('click', 'td input', function() {                
+                if($(this).prop('checked')){
+                    $(this).parent().css('text-decoration','line-through');
+                    $nremains--;
+                } else{
+                    $(this).parent().css('text-decoration','none');
+                    $nremains++;
+                }
+                if ($nremains > 1){
+                    $('.nremains').text($nremains + " Remains");
+                } else {
+                    $('.nremains').text($nremains + " Remain");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
