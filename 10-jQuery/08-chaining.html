@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chainning</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        img.ufo {
+            display: block;
+            margin: 70px auto;
+            position: relative;
+        }
+        section {
+            height: 400px;
+        }
+        button {
+            background-color: #0769AD;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #fff;
+            margin-bottom: 6px;
+            padding: 8px;
+            transition: transform 0.2s ease-out;
+            width: 100px;
+        }
+        button:hover {
+            transform: scale(1.08);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Chainning</span></h1>
+        </header>
+        <section>
+            <button class="btn">Animate!</button>
+            <img class="ufo" src="/10-jQuery/images/Nave.png" width="200px" alt="">           
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            showChaining = () =>{
+
+                $('.ufo').hide().slideDown(1200)
+                                .css({transform:'scale(2)'})
+                                .animate({left:'300px'}, 1000)
+                                .animate({left:'0px'}, 1000)
+                                .animate({left:'-300px'}, 1000)
+                                .animate({left:'0px'}, 1000)
+                                .slideUp(1200);
+
+            }
+
+            $('.btn').click(function(e){
+                showChaining();
+            });
+        });
+    </script>
+
+</body>
+</html>

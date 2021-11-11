@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        img.ufo {
+            position: relative;
+        }
+        section {
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Callback</span></h1>
+        </header>
+        <section>
+            <h3>The Animation has Began!</h3>
+           <img class="ufo" src="/10-jQuery/images/Nave.png" width="300px" alt="">
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Callbacks
+            $('.ufo').animate({left: '70%'}, 2500, function(){
+                $('.ufo').animate({top: '600px'}, 1500, function(){
+                    $('.ufo').animate({left: '0%'}, 2500, function(){
+                        $('.ufo').animate({top: '0px'}, 1500, function(){
+                            $('h3').text('The Animation has Done!');
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

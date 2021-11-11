@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            transition: all 0.2s ease-in;
+        }
+        div.box {
+            border: 2px solid #1e4168;
+            background: url(images/rengoku.jpeg) no-repeat center;
+            background-size: 200%;
+            height: 200px;
+            filter: grayscale(1);
+            margin: 20px auto;
+            transition: all 0.5s ease-in;
+            width: 200px;
+        }
+        div.box.enter {
+            background-size: 120%;
+            filter: grayscale(0);
+        }
+        input, 
+        select {
+            border: 2px solid #1e4168;
+            border-radius: 8px;
+            padding: 10px;
+            display: block;
+            margin: 20px auto;
+            width: 280px;
+        }
+        output,
+        p.msj {
+            font-size: 1.4rem;
+            color: #1e4168;
+            display: block;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        div.ball {
+            border-radius: 100px;
+            background-color: #1e4168;
+            height: 200px;
+            margin: 20px auto;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1> <span><a href="index.html">&larr;</a></span> Events</h1>
+        </header>
+        <section>
+            <h2>Mouse Events</h2>
+            <div class="box"></div>
+            <h2>Keyboard Events</h2>
+            <input type="text" placeholder="Enter text">
+            <output></output>
+            <h2>Form Events</h2>
+            <select>
+                <option value="">Select font size...</option>
+                <option value="1">1.5rem</option>
+                <option value="2">2rem</option>
+                <option value="3">3rem</option>
+            </select>
+            <h2>Window Events</h2>
+            <p class="msj"></p>
+            <div class="ball"></div>
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mouse Events
+            $('div.box').mouseenter(function(event) {
+                $(this).addClass('enter');
+            });
+            $('div.box').mouseleave(function(event) {
+                $(this).removeClass('enter');
+            });
+            // Keyboard Events
+            $('input').keyup(function(event) {
+                $('output').text($(this).val());
+            });
+            // Form Events
+            $('select').change(function(event) {
+                event.preventDefault();
+                switch($(this).val()) {
+                    case '1':
+                        $('body').css('font-size', '1.5rem');
+                        break;
+                    case '2':
+                        $('body').css('font-size', '2rem');
+                        break;
+                    case '3':
+                        $('body').css('font-size', '3rem');
+                        break;
+                    default:
+                        $('body').css('font-size', '1rem');
+                        break;
+                }
+            });
+            // Window Events
+            $(window).resize(function(event) {
+                $ww = $(this).outerWidth();
+                $('p.msj').text('Width Window: ' + $ww + ' px');
+            });
+            $sizeball = 1;
+            $lastScrollTop = 0;
+            $(window).scroll(function(event) {
+                $dirscroll = $(this).scrollTop();
+                if($dirscroll > $lastScrollTop) {
+                    $sizeball -= 0.10;
+                    $('div.ball').css('transform', 'scale('+$sizeball+')');
+                } else if($dirscroll == $lastScrollTop) {
+
+                }else {
+                    $sizeball += 0.10;
+                    $('div.ball').css('transform', 'scale('+$sizeball+')');
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
