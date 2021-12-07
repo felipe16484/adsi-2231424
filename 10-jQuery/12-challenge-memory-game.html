@@ -160,8 +160,8 @@
                     </div>
                 </div>
 
-                <div class="time">50</div>
-                <div class="move">50</div>
+                <div class="time">0</div>
+                <div class="move">0</div>
 
                 <section class="cardsGroup">
                     <div class="card">
@@ -221,67 +221,56 @@
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $timesClicked = 0;
+        $(document).ready(function () {
             $time = 0;
             $cntMoves = 0;
             $cntClicks = 0;
-            $cntMatch = 0;
-            $cards  = document.querySelectorAll('div.card');
+            $ctnMatch = 0;
+            $cards = document.querySelectorAll('div.card');
             $ccards = ['card01', 'card01', 'card02', 'card02',
-                      'card03', 'card03', 'card04', 'card04',
-                      'card05', 'card05', 'card06', 'card06'];
-            
-            $('.card').click(function() {
-                if (!$(this).hasClass('active')){
-                    $(this).addClass('is-flipped active');
+                'card03', 'card03', 'card04', 'card04',
+                'card05', 'card05', 'card06', 'card06'
+            ];
+
+            $('.card').click(function () {
+                if (!$(this).hasClass('active')) {
                     $cntClicks++;
-                    if($cntClicks == 1){
+                    if ($cntClicks == 1) {
                         $card1 = $(this);
-                    }
-                    else{
+                        $(this).addClass('is-flipped active');
+                    } else if ($cntClicks == 2) {
                         $card2 = $(this);
-                        $cntClicks = 0;
+                        $(this).addClass('is-flipped active');                        
                         checkMatch();
                     }
-                }                
+                }
             });
-           
-            $('#btnSave').click(function() {
+
+            $('#btnSave').click(function () {
                 var jugadores = [];
-                if (JSON.parse(localStorage.getItem("player")) != null) {
-                    JSON.parse(localStorage.getItem("player")).forEach(element => {
+                if (JSON.parse(localStorage.getItem("gamer")) != null) {
+                    JSON.parse(localStorage.getItem("gamer")).forEach(element => {
                         jugadores.push(element);
                     });
                 }
-                let player = {
-                    moves: $cntMoves,
+                let gamer = {
                     id: jugadores.length + 1,
                     username: $('#username').val(),
+                    moves: $cntMoves,
                     time: $time,
                 };
-                jugadores.push(player);
+                jugadores.push(gamer);
+                
+                jugadores.sort(function (a, b) {return a.moves - b.moves});
 
-                jugadores.sort((a, b) => {
-                    const movesA = a.moves;
-                    const movesB = b.moves;
-                    if (movesA < movesB){
-                        return -1;
-                    }
-                    if (movesA > movesB){
-                        return 1;
-                    }
-                    return 0;
-                });
-                while(true){
-
-                    if (jugadores.length >= 10){
-                        jugadores.pop();
-                    }
+                console.log("Ordenada: " + jugadores);
+                
+                if (jugadores.length > 10){
+                    jugadores.pop();
                 }
 
-                let userPlayer = JSON.stringify(jugadores);
-                localStorage.setItem("player", userPlayer);
+                let userGamer = JSON.stringify(jugadores);
+                localStorage.setItem("gamer", userGamer);
                 $('.modal').addClass('hide');
                 setTimeout(function () {
                     window.location.replace('12-challenge-memory-game.html');
@@ -291,32 +280,31 @@
             const checkMatch = () => {
                 $cntMoves++;
                 $('.move').text($cntMoves);
-                console.log($('.card'));
-                if($card1.attr('class').substring(5,12) == $card2.attr('class').substring(5,12)){
-                    //alert('Match');
-                    $cntMatch++;
-                    if($cntMatch==6){
+
+                if ($card1.attr('class').substring(5, 12) == $card2.attr('class').substring(5, 12)) {
+                    $ctnMatch++;
+                    $cntClicks = 0;
+                    if ($ctnMatch == 6) {
+                        showResult();
                         clearInterval($setInt);
-                        setTimeout(function(){
-                            //alert("hi");
-                            showResult();
-                        }, 1000);
                     }
-                }else{
-                    setTimeout(function(){
+                } else {
+                    setTimeout(function () {
                         $card1.removeClass('is-flipped active');
                         $card2.removeClass('is-flipped active');
+                        $cntClicks = 0;
                     }, 1000);
                 }
             }
 
             const showResult = () => {
-                $('.fmoves').text($cntMoves + ' moves');
-                $('.ftime').text($time + ' seconds');
+                $('.fmoves').text($cntMoves + " moves");
+                $('.ftime').text($time + " seconds");
                 $('.modal').removeClass('hide');
             }
+
             const getTime = () => {
-                $setInt = setInterval(function(){
+                $setInt = setInterval(function () {
                     $time++;
                     $('.time').text($time);
                 }, 1000);
@@ -329,9 +317,9 @@
             }
 
             const randomBg = () => {
-                $rn = Math.floor(Math.random() * $ccards.length );
+                $rn = Math.floor(Math.random() * $ccards.length);
                 $bg = $ccards[$rn];
-                $ccards.splice($rn,1);
+                $ccards.splice($rn, 1);
                 return $bg;
             }
 
