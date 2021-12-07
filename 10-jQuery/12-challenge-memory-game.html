@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge - Memory Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        figure.base {
+            background: url(/10-jQuery/images/MemoryGame/base.png) no-repeat center;
+            height: 765px;
+            margin: 0 auto;
+            width: 911px;
+        }
+        div.time {
+            background: url(/10-jQuery/images/MemoryGame/timer.png) no-repeat center;
+            color:#fff;
+            height: 57px;
+            line-height: 53px;
+            padding-left: 147px;
+            position: relative;
+            top: 62px;
+            left: 591px;
+            width: 123px;
+        }
+        div.move {
+            background: url(/10-jQuery/images/MemoryGame/move.png) no-repeat center;
+            color:#fff;
+            height: 57px;
+            line-height: 53px;
+            padding-left: 60px;
+            position: relative;
+            top: 5px;
+            left: 89px;
+            width: 123px;
+        }
+        section.cardsGroup {
+            *border: 1px solid red;
+            height: 573px;
+            margin: 30px auto;
+            width: 716px;
+        }
+        div.card {
+            display: inline-block;
+            height: 150px;
+            margin: 22px;
+            transition: transform 0.5s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            position: relative;
+            width: 130px;
+        }
+        div.card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        div.card.is-flipped {
+            transform: rotateY(180deg);
+        }
+        div.card-face-back {
+            transform: rotateY(180deg);
+        }
+        div.card-face-front {
+            background: transparent url(/10-jQuery/images/MemoryGame/hide.png) no-repeat center;
+        }
+        div.card01 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card1.png) no-repeat center;
+        }
+        div.card02 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card2.png) no-repeat center;
+        }
+        div.card03 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card3.png) no-repeat center;
+        }
+        div.card04 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card4.png) no-repeat center;
+        }
+        div.card05 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card5.png) no-repeat center;
+        }
+        div.card06 div.card-face-back {
+            background: transparent url(/10-jQuery/images/MemoryGame/card6.png) no-repeat center;
+        }
+        div.modal{
+            background-color: #000c;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            z-index: 9;
+            left: 0;
+            top: 0;
+        }
+
+        div.modal div.data{
+            background-color: #fff;
+            *border: 1px solid red;
+            border-radius: 25px;
+            padding: 20px;
+            width: 400px;
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate();
+        }
+
+        div.modal input{
+            border-radius: 25px;
+            color: #800;
+            font-size: 15px;
+            margin: 25px 0px 0px 15%;
+            outline: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        div.modal div.data h4{
+            color:#800;
+            text-align: center;
+            font-size: 35px;
+            margin: 0px;
+        }
+
+        div.modal div.data button{
+            background-color: #ccc;
+            border: none;
+            border-radius: 15px;
+            color: #800;
+            height: 40px;
+            margin-left: 10px;
+            width: 50px;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <h1><span><a href="index.html">&larr;</a>Challenge - Memory Game</span></h1>
+        </header>
+        <section>
+            <figure class="base">
+
+                <div class="modal hide">
+                    <div class="data">
+                        <h4>Congratulations!</h4>
+                        <hr>
+                        <div class="fmoves">0 moves</div>
+                        <div class="ftime">0 seconds</div>
+                        <input type="text" id="username" placeholder="Enter Username">
+                        <button id="btnSave">Save</button>
+                    </div>
+                </div>
+
+                <div class="time">50</div>
+                <div class="move">50</div>
+
+                <section class="cardsGroup">
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div>
+                    <div class="card">
+                        <div class="card-face card-face-front"></div>
+                        <div class="card-face card-face-back"></div>
+                    </div> 
+                </section>
+
+            </figure>
+           
+        </section>
+    </main>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $timesClicked = 0;
+            $time = 0;
+            $cntMoves = 0;
+            $cntClicks = 0;
+            $cntMatch = 0;
+            $cards  = document.querySelectorAll('div.card');
+            $ccards = ['card01', 'card01', 'card02', 'card02',
+                      'card03', 'card03', 'card04', 'card04',
+                      'card05', 'card05', 'card06', 'card06'];
+            
+            $('.card').click(function() {
+                if (!$(this).hasClass('active')){
+                    $(this).addClass('is-flipped active');
+                    $cntClicks++;
+                    if($cntClicks == 1){
+                        $card1 = $(this);
+                    }
+                    else{
+                        $card2 = $(this);
+                        $cntClicks = 0;
+                        checkMatch();
+                    }
+                }                
+            });
+           
+            $('#btnSave').click(function() {
+                var jugadores = [];
+                if (JSON.parse(localStorage.getItem("player")) != null) {
+                    JSON.parse(localStorage.getItem("player")).forEach(element => {
+                        jugadores.push(element);
+                    });
+                }
+                let player = {
+                    moves: $cntMoves,
+                    id: jugadores.length + 1,
+                    username: $('#username').val(),
+                    time: $time,
+                };
+                jugadores.push(player);
+
+                jugadores.sort((a, b) => {
+                    const movesA = a.moves;
+                    const movesB = b.moves;
+                    if (movesA < movesB){
+                        return -1;
+                    }
+                    if (movesA > movesB){
+                        return 1;
+                    }
+                    return 0;
+                });
+                while(true){
+
+                    if (jugadores.length >= 10){
+                        jugadores.pop();
+                    }
+                }
+
+                let userPlayer = JSON.stringify(jugadores);
+                localStorage.setItem("player", userPlayer);
+                $('.modal').addClass('hide');
+                setTimeout(function () {
+                    window.location.replace('12-challenge-memory-game.html');
+                }, 1000);
+            });
+
+            const checkMatch = () => {
+                $cntMoves++;
+                $('.move').text($cntMoves);
+                console.log($('.card'));
+                if($card1.attr('class').substring(5,12) == $card2.attr('class').substring(5,12)){
+                    //alert('Match');
+                    $cntMatch++;
+                    if($cntMatch==6){
+                        clearInterval($setInt);
+                        setTimeout(function(){
+                            //alert("hi");
+                            showResult();
+                        }, 1000);
+                    }
+                }else{
+                    setTimeout(function(){
+                        $card1.removeClass('is-flipped active');
+                        $card2.removeClass('is-flipped active');
+                    }, 1000);
+                }
+            }
+
+            const showResult = () => {
+                $('.fmoves').text($cntMoves + ' moves');
+                $('.ftime').text($time + ' seconds');
+                $('.modal').removeClass('hide');
+            }
+            const getTime = () => {
+                $setInt = setInterval(function(){
+                    $time++;
+                    $('.time').text($time);
+                }, 1000);
+            }
+
+            const randomCard = () => {
+                for (let i = 0; i < $cards.length; i++) {
+                    $($cards[i]).addClass(randomBg());
+                }
+            }
+
+            const randomBg = () => {
+                $rn = Math.floor(Math.random() * $ccards.length );
+                $bg = $ccards[$rn];
+                $ccards.splice($rn,1);
+                return $bg;
+            }
+
+            randomCard();
+            getTime();
+        });
+    </script>
+
+</body>
+</html>
