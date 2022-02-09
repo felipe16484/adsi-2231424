@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popovers</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <style>
+      
+  </style>
+</head>
+<body>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-md-12 my-5">
+                <h1 class="text-center text-danger">Popovers</h1>
+                <hr>
+                
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                          <a href="index.html">
+                              <i class="fa fa-home"></i>
+                              Main Menu
+                            </a>
+                        </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                          <i class="fa fa-file-code"></i>
+                          Popovers
+                        </li>
+                    </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <!--  -->
+                        <h3 class="text-muted mt-5">Examples:</h3>
+                        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="top" data-bs-content="Top popover">
+                            Popover on top
+                          </button>
+                          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="right" data-bs-content="Right popover">
+                            Popover on right
+                          </button>
+                          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="bottom" data-bs-content="Bottom popover">
+                            Popover on bottom
+                          </button>
+                          <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="left" data-bs-content="Left popover">
+                            Popover on left
+                          </button>
+
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+   
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+        })
+    </script>
+</body>
+</html>
