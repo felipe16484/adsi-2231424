@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Container</title>    
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="min-h-screen">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Container</h1>
+        </header>        
+        <section class="p-4 mx-auto bg-black bg-opacity-50 my-0 w-10/12">
+            <h2 class="text-2xl border-b-2 pb-4">Example:</h2>
+            <!-- Ejercicio -->
+            <div class="container rounded-lg my-10 bg-white p-10 text-black text-5xl sm:bg-red-600 sm:text-white md:bg-green-600 lg:text-8xl lg:bg-blue-600 xl:bg-yellow-600 2xl:bg-violet-900 h-full h-96 flex items-center justify-center">
+                <p class="tracking-widest uppercase text-center">
+                    Container
+                    <span class="block text-black sm:hidden">extra-small</span>
+                    <span class="hidden sm:block md:hidden">small</span>
+                    <span class="hidden sm:hidden md:block lg:hidden">medium</span>
+                    <span class="hidden md:hidden lg:block xl:hidden">large</span>
+                    <span class="hidden lg:hidden xl:block 2xl:hidden">extra-large</span>
+                    <span class="hidden 2xl:block">extra extra-large</span>
+                </p>
+            </div>
+            <!-- / Ejercicio -->
+        </section>
+    </main>
+</body>
+</html>
