@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Object Fit</title>    
+    
+   
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Object Fit</h1>
+        </header>        
+        <section class="p-4 mx-auto bg-black bg-opacity-50 my-0 w-10/12">
+            <h2 class="text-2xl border-b-2 pb-4 mb-10">Cover:</h2>
+            
+            <div class="bg-purple-600 rounded-lg p-10 w-6/12">
+                <img src="http://placekitten.com/800/600" class="object-cover h-48 w-full">
+            </div>
+            
+            <h2 class="text-2xl border-b-2 pb-4 my-10 ">Contain:</h2>
+            
+            <div class="bg-purple-600 rounded-lg p-10 mt-5 w-6/12">
+                <img src="http://placekitten.com/800/600" class="object-contain h-48 w-full">
+            </div>
+
+            <h2 class="text-2xl border-b-2 pb-4 my-10 ">Fill:</h2>
+            
+            <div class="bg-purple-600 rounded-lg p-10 mt-5 w-6/12">
+                <img src="http://placekitten.com/800/600" class="object-fill h-48 w-full">
+            </div>
+
+            <h2 class="text-2xl border-b-2 pb-4 my-10 ">None:</h2>
+            
+            <div class="bg-purple-600 rounded-lg p-10 mt-5 w-6/12">
+                <img src="http://placekitten.com/800/600" class="object-none h-48 w-full">
+            </div>
+        </section>
+    </main>
+</body>
+</html>

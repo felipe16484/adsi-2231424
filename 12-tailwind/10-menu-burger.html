@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Menu Burger</title>    
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Menu Burger</h1>
+        </header>        
+        <body class="bg-blue-500">
+
+            <nav class="w-full flex justify-between bg-purple-400 h-20 pr-4">
+                <div class="ml-5 flex my-auto">
+                    <a class="text-lmd font-bold text-purple-900 my-auto" href="#">Burger</a>
+                </div>
+                <div class="lg:hidden my-auto"> 
+                    <button class="flex items-center text-purple-900 p-3" id="button">
+                        <svg id="svg-content" class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="hidden float-right lg:flex my-auto">
+                    <li><a class="text-lmd text-violet-100 hover:text-purple-900 hover:scale-125 ml-2" href="#">Home</a></li>
+                
+                    <li><a class="text-lmd text-violet-100 hover:text-purple-900 hover:scale-125 ml-2 " href="#">About Us</a></li>
+                    
+                    <li><a class="text-lmd text-violet-100 hover:text-purple-900 hover:scale-125 ml-2 " href="#">Services</a></li>
+                   
+                    <li><a class="text-lmd text-violet-100 hover:text-purple-900 hover:scale-125 ml-2 " href="#">Pricing</a></li>
+                    
+                    <li><a class="text-lmd text-violet-100 hover:text-purple-900 hover:scale-125 ml-2 " href="#">Contacto</a></li>
+                </ul>                
+            </nav>
+
+            <ul id="show" class="hidden w-12/12 p-0 items-left flex-col ring-1 ring-red-900">
+                <li class="pl-3 h-10 w-12/12 bg-violet-900 ring-1 ring-white rounded-2xl pt-1"><a class=" text-lmd block text-violet-100 hover:text-purple-900 ml-2" href="#">Home</a></li>
+            
+                <li class="pl-3 h-10 w-12/12 bg-violet-900 ring-1 ring-white rounded-2xl pt-1"><a class=" text-lmd block text-violet-100 hover:text-purple-900 ml-2 " href="#">About Us</a></li>
+                
+                <li class="pl-3 h-10 w-12/12 bg-violet-900 ring-1 ring-white rounded-2xl pt-1"><a class=" text-lmd block text-violet-100 hover:text-purple-900 ml-2 " href="#">Services</a></li>
+               
+                <li class="pl-3 h-10 w-12/12 bg-violet-900 ring-1 ring-white rounded-2xl pt-1"><a class=" text-lmd block text-violet-100 hover:text-purple-900 ml-2 " href="#">Pricing</a></li>
+                
+                <li class="pl-3 h-10 w-12/12 bg-violet-900 ring-1 ring-white rounded-2xl pt-1"><a class=" text-lmd block text-violet-100 hover:text-purple-900 ml-2 " href="#">Contact</a></li>
+            </ul>
+
+
+            
+        </body>
+    </main>
+    
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg> -->
+
+    <script>
+        const button      = document.getElementById('button');
+        const listHidden  = document.getElementById('show');
+        const svgContent  = document.getElementById('svg-content');
+        var   status_icon = true;
+
+        const icon_close  = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+        const icon_open   = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+
+        button.onclick    = function() {
+            listHidden.classList.toggle('hidden');
+            if(status_icon){
+                svgContent.innerHTML = icon_close;
+                status_icon = false;
+            }else {
+                svgContent.innerHTML = icon_open;
+                status_icon = true;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
+

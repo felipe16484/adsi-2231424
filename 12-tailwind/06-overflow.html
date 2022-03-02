@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Overflow</title>    
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Overflow</h1>
+        </header>        
+        <section class="p-4 mx-auto bg-black bg-opacity-50 my-0 w-10/12">
+
+            <h2 class="text-2xl border-b-2 pb-4">Visible:</h2>
+
+            <div class="relative rounded-xl overflow-auto p-8">
+                <div class="overflow-visible relative max-w-sm mx-auto bg-purple-700 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                  <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg" src="http://placekitten.com/400/400">
+                  <div class="flex flex-col py-5 pl-24">
+                    <strong class="text-slate-900 text-sm font-medium ">Gastón Hammilton</strong>
+                    <span class="text-white text-sm font-medium ">Locale Cat</span>
+                  </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl border-b-2 pb-4">Hidden:</h2>
+
+            <div class="relative rounded-xl overflow-auto p-8">
+                <div class="overflow-hidden relative max-w-sm mx-auto bg-purple-700 shadow-lg ring-1 ring-black/5 rounded-xl flex items-center gap-6">
+                  <img class="absolute -left-6 w-24 h-24 rounded-full shadow-lg" src="http://placekitten.com/400/400">
+                  <div class="flex flex-col py-5 pl-24">
+                    <strong class="text-slate-900 text-sm font-medium ">Gastón Hammilton</strong>
+                    <span class="text-white text-sm font-medium ">Locale Cat</span>
+                  </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl border-b-2 pb-4">Y Auto:</h2>
+
+            <div class="relative rounded-xl overflow-auto p-8">
+                <div class="overflow-y-auto h-72 relative max-w-sm mx-auto bg-purple-700 shadow-lg ring-1 ring-black/5 rounded-xl flex flex-col divide-y divide-purple-900">
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Primero</strong>
+                      <span class="text-white text-sm font-medium">Technical advisor</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Segundo</strong>
+                      <span class="text-white text-sm font-medium">Analyst</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Tercero</strong>
+                      <span class="text-white text-sm font-medium">Director, Marketing</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-4 p-4">
+                    <img class="w-12 h-12 rounded-full" src="http://placekitten.com/400/400">
+                    <div class="flex flex-col">
+                      <strong class="text-slate-900 text-sm font-medium">Gastón Hammilton Cuarto</strong>
+                      <span class="text-white text-sm font-medium">Technical Advisor</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+    </main>
+</body>
+</html>

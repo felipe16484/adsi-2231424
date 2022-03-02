@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Position</title>    
+
+    <style>
+        ::-webkit-scrollbar {
+        display:none;
+    }
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Position</h1>
+        </header>        
+        <section class="p-4 mx-auto bg-black bg-opacity-50 my-0 w-10/12">
+            <h2 class="text-2xl border-b-2 pb-4">Example:</h2>
+            <div class="relative mt-5 p-10 h-96 bg-violet-500 rounded-md">
+                <p>Relative parent</p>
+                <div class="absolute bg-purple-400 p-10 bottom-1/4 left-100 left-2/4 rounded-lg">
+                  <p>Absolute child</p>
+                </div>
+            </div>
+
+
+            <div class="rounded-2xl my-10">
+                <div class="relative  overflow-auto">
+                    <div class="px-3 ">
+                      <div class="relative rounded-xl max-w-md mx-auto bg-purple-700 shadow-lg h-80 overflow-auto -my-px">
+                        <div class="relative ">
+                          <div class="sticky top-0 px-4 bg-white py-3 flex items-center font-semibold text-sm text-purple-800 backdrop-blur-sm">A</div>
+                          <div class="divide-y divide-purple-900">
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Andrew Alfred</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Aisha Houston</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Anna White</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Andy Flint</strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <div class="sticky top-0 px-4 bg-white py-3 flex items-center font-semibold text-sm text-purple-800 backdrop-blur-sm">B</div>
+                          <div class="divide-y divide-purple-900">
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Bob Alfred</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Bianca Houston</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Brianna White</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Bert Flint</strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="relative">
+                          <div class="sticky top-0 px-4 bg-white py-3 flex items-center font-semibold text-sm text-purple-800 backdrop-blur-sm">C</div>
+                          <div class="divide-y divide-purple-900">
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Colton Alfred</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Cynthia Houston</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Cheyenne White</strong>
+                            </div>
+                            <div class="flex items-center gap-4 p-4">
+                              <img class="w-12 h-12 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=facearea&amp;facepad=4&amp;w=256&amp;h=256&amp;q=80">
+                              <strong class="text-white text-sm font-medium dark:text-slate-200">Charlie Flint</strong>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            
+        </section>
+    </main>
+</body>
+</html>
