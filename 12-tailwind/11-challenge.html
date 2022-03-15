@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="js/tailwind-3.0.23.js"></script>
+    <link rel="stylesheet" href="css/custom.css">
+
+    <title>Challenge</title>    
+
+    <style>
+        * {
+            transition: all 0.05s ease-in;
+        }
+
+        section.cont {
+            border-radius: 35px;
+            height: 720px;
+            width: 334px;
+        }
+        div.image {
+            height: 450px;
+        }
+        
+    </style>
+</head>
+
+<body class="bg-gradient-to-b from-violet-500 via-purple-700 to-violet-800 min-h-screen text-white">
+    <main class="">
+        <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
+            <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
+            <h1 class="text-center text-4xl font-bold text-violet-900">Challenge</h1>
+        </header>        
+        <section class="p-14 mx-auto bg-black bg-opacity-50 my-0 w-10/12 flex justify-center gap-4">
+
+            <!-- First Frame -->
+            <section class="cont bg-white overflow-hidden text-center justify-center items-center">
+                <img class="bg-cover" src="http://placekitten.com/336/450">
+                <div class="flex gap-2 justify-center my-8">
+                    <div class="h-2 w-2 rounded-full bg-orange-300"></div>
+                    <div class="h-2 w-2 rounded-full bg-orange-300"></div>
+                    <div class="h-2 w-6 rounded-full bg-orange-600"></div>
+                </div>
+                <h1 class="text-neutral-900 text-4xl font-bold mb-3">StandUp</h1>
+                <div class="px-10">
+                    <p class="text-gray-400 text-xs flex">Are you ready to learn languages easily in the funniest way.</p>
+                </div>
+                <button id="firstButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-6 hover:bg-gray-800">Get Stared</button>
+            </section>
+
+            <!-- Second Frame -->
+            <section class="cont bg-white overflow-hidden flex flex-col">
+
+                <nav class="flex justify-between px-5 mt-5 text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </nav>
+
+                <h2 class="text-black justify-start pl-5 text-2xl font-bold my-7">A2 - Elementary</h2>
+
+                <div class="ml-5 items-center flex flex-row gap-4 mt-4">
+                    <div class="text-black bg-orange-200 h-14 w-14 rounded-full flex items-center justify-center">0%</div>
+                    <div class="text-black">
+                        <p class="font-bold">Lession 1</p>
+                        <p class="text-xs text-gray-400">How are you?</p>
+                    </div>
+                </div>
+
+                <div class=" w-full h-32 px-5  mt-6">
+                    <img class="bg-cover rounded-3xl" src="http://placekitten.com/336/147">                    
+                </div>
+
+                <div class="ml-5 items-center flex flex-row gap-4 mt-6">
+                    <div class="text-black bg-red-400 h-14 w-14 rounded-full flex items-center justify-center">0%</div>
+                    <div class="text-black">
+                        <p class="font-bold">Lession 2</p>
+                        <p class="text-xs text-gray-400">Pronunciation</p>
+                    </div>
+                </div>
+
+                <div class="ml-5 items-center flex flex-row gap-4 mt-6">
+                    <div class="text-black bg-green-500 h-14 w-14 rounded-full flex items-center justify-center">0%</div>
+                    <div class="text-black">
+                        <p class="font-bold">Lession 3</p>
+                        <p class="text-xs text-gray-400">Demostrative pronouns</p>
+                    </div>
+                </div>
+
+                <div class="ml-5 items-center flex flex-row gap-4 mt-6">
+                    <div class="text-black bg-blue-500 h-14 w-14 rounded-full flex items-center justify-center">0%</div>
+                    <div class="text-black">
+                        <p class="font-bold">Lession 4</p>
+                        <p class="text-xs text-gray-400">Present continuous</p>
+                    </div>
+                </div>
+
+                <button id="firstButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-6 hover:bg-gray-800">Next</button>
+
+            </section>
+
+
+            <!-- Second Frame -->
+            <section class="cont bg-white overflow-hidden text-center justify-center items-center">
+                <nav class="flex justify-between px-5 mt-5 text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                </nav>
+
+                <p class="font-bold text-black text-2xl px-10 mt-9">Choose your language level</p>
+
+                <div class="w-full h-auto px-2 mt-6">
+                    <div class="bg-indigo-700 rounded-2xl w-full h-auto justify-start text-left divide-y px-2">
+                        <p class="py-3 pl-5 w-full">A1 - Basic</p>
+                        <p class="py-3 pl-5 w-full">A1 - Elementary</p>
+                        <p class="py-3 pl-5 w-full">A1 - Pre-intermediate</p>
+                        <p class="py-3 pl-5 w-full">A1 - Intermediate</p>
+                    </div>                    
+                </div>
+
+                <p class="text-black px-16 text-sm font-semibold my-20">Or take a test to determinate the level. It will take about 10 minutes.</p>
+
+                <button id="firstButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-9 hover:bg-gray-800">Next</button>
+
+            </section>
+
+        </section>
+    </main>
+</body>
+</html>
