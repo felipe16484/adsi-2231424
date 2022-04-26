@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vue JS</title>
+   <link rel="stylesheet" href="css/fonts.css">
+   <style>
+      /* ===== Scrollbar CSS ===== */
+      /* Firefox */
+      * {
+         scrollbar-width: auto;
+         scrollbar-color: #35495e #42b883;
+      }
+
+      /* Chrome, Edge, and Safari */
+      *::-webkit-scrollbar {
+         width: 10px;
+      }
+
+      *::-webkit-scrollbar-track {
+         background: #ffffff11;
+      }
+
+      *::-webkit-scrollbar-thumb {
+         background-color: #34495E;
+         border-radius: 10px;
+         border: 0px solid #ffffff11;
+      }
+   </style>
+</head>
+<body class="bg-gradient-to-t from-[#34495E] to-[#41B883] min-h-screen flex justify-center items-center">
+   <main id="app" class="bg-white/70 w-96 h-[640px] rounded-xl shadow-xl">
+      <svg class="h-28 w-28 mx-auto my-6" viewBox="0 0 128 128" width="24" height="24" data-v-5f26462c="">
+         <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-5f26462c=""></path>
+         <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-5f26462c=""></path>
+      </svg>
+      <h1 class="text-center text-5xl font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
+
+      <nav class="flex flex-col items-center gap-2 my-6 overflow-y-auto h-[385px] scroll-">
+         <li v-for="link in links" class="list-none h-12 w-8/12 flex items-center">
+            <a :href="link.url" class=" bg-[#41b883] py-3 px-4 rounded-2xl text-white w-full text-center shadow-sm hover:bg-[#35495e] hover:scale-110 transition duration-300">{{ link.text }}</a>
+         </li>
+      </nav>
+   </main>
+</body>
+</html>
+<script src="js/tailwind-3.0.23.js"></script>
+<script src="js/vue3.2.31.js"></script>
+<script>
+   Vue.createApp({
+     data() {
+       return {
+         title: 'Vue JS 3',
+         links: [
+            { url: '01-rendering.html', text: '01 - Rendering' },
+            { url: '02-attr-binding.html', text: '02 - Attr Binding' },
+            { url: '03-event-listeners.html', text: '03 - Event Listeners' },
+            { url: '04-form-binding.html', text: '04 - Form Binding' },
+            { url: '05-conditional.html', text: '05 - Conditional' },
+            { url: '06-list-rendering.html', text: '06 - List Rendering' },
+            { url: '07-computed-property.html', text: '07 - Computed Property' },
+            { url: '08-challenge-tic-tac-toe.html', text: '08- Challenge Tic Tac Toe' },
+            { url: '09-lifecycle.html', text: '09- Lifecycle' },
+            { url: '10-watchers.html', text: '10- Watchers' },
+            { url: '11-components/', text: '11- Components' }
+         ]
+        /*  links: ['01-basics.html', '02-example.html', '03-example.html', '04-example.html', '05-example.html'],
+         texts: ['01 - Basics', '02 - Example', '03 - Example', '04 - Example', '05 - Example'] */
+       }
+     }
+   }).mount('#app')
+ </script>

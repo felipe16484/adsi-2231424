@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vue JS 3</title>
+   <link rel="stylesheet" href="css/fonts.css">
+   <style>
+      .increment{
+         color: #800;
+      }
+      .decrement{
+         color: #42b883;
+      }
+   </style>
+</head>
+<body class="bg-gradient-to-t from-[#34495E] to-[#41B883] min-h-screen flex justify-center items-center">
+   <main id="app" class="relative bg-white/70 w-96 h-[640px] rounded-xl shadow-xl">
+      <svg class="h-28 w-28 mx-auto my-6" viewBox="0 0 128 128" width="24" height="24" data-v-5f26462c="">
+         <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-5f26462c=""></path>
+         <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-5f26462c=""></path>
+      </svg>
+      <h1 class="text-center text-3xl mb-6 font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
+      <h3 :class="status" class="text-5xl text-center my-10 border-[#34495e] border-2 w-28 h-28 rounded-full flex justify-center items-center mx-auto">{{ count }}</h3>
+      <!--   v-bind:class=""     :class="" -->
+      <button @click="methodCount" class="bg-[#35495e] text-slate-100 flex mx-auto py-2 px-8 rounded-full capitalize hover:scale-110 transition duration-100">{{ status }}</button>
+
+      <a href="index.html" class="absolute bottom-2 left-[164px] h-14 w-14  text-[#34495e] hover:scale-125 hover:text-[#41b883] transition duration-400">
+         <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+         </svg>
+      </a>
+   </main>
+</body>
+<script src="js/tailwind-3.0.23.js"></script>
+<script src="js/vue3.2.31.js"></script>
+<script>
+   const attr = {
+      data(){
+         return{
+            title : '02 - Attribute Binding',
+            count : 0,
+            interval : null, 
+            color: "#800",
+            status : "increment"
+         }
+      },
+      methods: {
+         methodCount(){
+            if(this.status === "increment"){
+               this.incrementCount()
+            } else {
+               this.decrementCount()
+            }
+         },
+         incrementCount() {
+            this.stopCount()
+            this.interval = setInterval(() => {
+               this.count++;
+            }, 300)
+            this.status = "decrement"
+         },
+         decrementCount() {
+            this.stopCount()
+            this.interval = setInterval(() => {
+               this.count--;
+               if(this.count == 0){
+                  clearInterval(this.interval)
+               }
+            }, 300)
+            this.status = "increment"
+         },
+         stopCount(){
+            clearInterval(this.interval)
+         }
+      }
+   }
+   var mountapp = Vue.createApp(attr).mount('#app');
+</script>
+</html>

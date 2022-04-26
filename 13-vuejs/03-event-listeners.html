@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vue JS 3</title>
+   <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body class="bg-gradient-to-t from-[#34495E] to-[#41B883] min-h-screen flex justify-center items-center">
+    <main id="app" class="relative bg-white/70 w-96 h-[640px] rounded-xl shadow-xl">
+        <svg class="h-28 w-28 mx-auto my-6" viewBox="0 0 128 128" width="24" height="24" data-v-5f26462c="">
+            <path fill="#42b883" d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z" data-v-5f26462c=""></path>
+            <path fill="#35495e" d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z" data-v-5f26462c=""></path>
+        </svg>
+        <h1 class="text-center text-3xl mb-6 font-semibold bg-gradient-to-l from-[#34495E] to-[#41B883] bg-clip-text text-transparent">{{title}}</h1>
+        
+        <img ref="kimage" v-bind:src="kitten" class="rounded-xl w-56 flex mx-auto shadow-xl">
+        <div ref="loader" class="flex mx-auto justify-center items-center my-4 hidden">
+            <svg class="animate-spin h-56 w-56 text-[#34495e]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+        </div>
+        <button @click="randKitten" class="bg-[#35495e] text-slate-100 flex mx-auto py-2 px-8 mt-6 rounded-full capitalize hover:scale-110 hover:bg-[#41b883] transition duration-100">Random</button>
+        <!-- http://placekitten.com/400/400 -->
+
+        <a href="index.html" class="absolute bottom-2 left-[164px] h-14 w-14  text-[#34495e] hover:scale-125 hover:text-[#41b883] transition duration-300">
+             <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd" />
+            </svg>
+        </a>
+    </main>
+</body>
+</html>
+<script src="js/tailwind-3.0.23.js"></script>
+<script src="js/vue3.2.31.js"></script>
+<script>
+    const event = {
+        data(){
+            return{
+                title : '03 - Event Listeners',
+                kitten: 'http://placekitten.com/452/453'
+            }
+        },
+        methods: {
+            randKitten(){
+                let rand = Math.round(Math.random()*100) + 400;
+                console.log(rand);
+                this.kitten = 'http://placekitten.com/' + rand + '/' + rand ;
+                this.$refs.kimage.classList.toggle('hidden');
+                this.$refs.loader.classList.toggle('hidden');
+                setTimeout( () => {
+                    this.$refs.kimage.classList.toggle('hidden');
+                    this.$refs.loader.classList.toggle('hidden');
+                }, 800)
+            }
+        }
+    }
+   var mountapp = Vue.createApp(event).mount('#app');
+</script>

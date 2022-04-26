@@ -16,6 +16,7 @@
     <title>Challenge</title>    
 
     <style>
+        
         * {
             transition: all 0.05s ease-in;
         }
@@ -37,11 +38,12 @@
         <header class="bg-indigo-100 bg-opacity-5 p-10 shadow-xl flex items-center justify-center">
             <a class="text-4xl text-white bg-indigo-900 py-1 px-4 rounded-lg mr-20 transition hover:bg-violet-800 hover:-translate-x-1" href="index.html">◀</a>
             <h1 class="text-center text-4xl font-bold text-violet-900">Challenge</h1>
-        </header>        
+        </header>       
+
         <section class="p-14 mx-auto bg-black bg-opacity-50 my-0 w-10/12 flex justify-center gap-4">
 
             <!-- First Frame -->
-            <section class="cont bg-white overflow-hidden text-center justify-center items-center">
+            <section id="sectOne" class="cont bg-white overflow-hidden text-center justify-center items-center">
                 <img class="bg-cover" src="http://placekitten.com/336/450">
                 <div class="flex gap-2 justify-center my-8">
                     <div class="h-2 w-2 rounded-full bg-orange-300"></div>
@@ -56,7 +58,7 @@
             </section>
 
             <!-- Second Frame -->
-            <section class="cont bg-white overflow-hidden flex flex-col">
+            <section id="sectThree" class="cont bg-white overflow-hidden flex flex-col hidden">
 
                 <nav class="flex justify-between px-5 mt-5 text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -105,13 +107,13 @@
                     </div>
                 </div>
 
-                <button id="firstButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-6 hover:bg-gray-800">Next</button>
+                <button id="thirdButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-6 hover:bg-gray-800">Next</button>
 
             </section>
 
 
-            <!-- Second Frame -->
-            <section class="cont bg-white overflow-hidden text-center justify-center items-center">
+            <!-- Third Frame -->
+            <section id="sectTwo" class="cont bg-white overflow-hidden text-center justify-center items-center hidden">
                 <nav class="flex justify-between px-5 mt-5 text-black">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hover:scale-125" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12" />
@@ -134,11 +136,36 @@
 
                 <p class="text-black px-16 text-sm font-semibold my-20">Or take a test to determinate the level. It will take about 10 minutes.</p>
 
-                <button id="firstButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-9 hover:bg-gray-800">Next</button>
-
+                <button id="secondButton" class="h-14 w-40 mx-auto rounded-lg bg-black text-white text-xs mt-9 hover:bg-gray-800">Return Main</button>
             </section>
 
         </section>
     </main>
+
+    <script>
+        const firstButton   = document.getElementById('firstButton');
+        const secondButton  = document.getElementById('secondButton');
+        const thirdButton   = document.getElementById('thirdButton');
+
+        const sectOne       = document.getElementById('sectOne');
+        const sectTwo       = document.getElementById('sectTwo');
+        const sectThree     = document.getElementById('sectThree');
+
+
+        firstButton.onclick = function() {
+            sectOne.classList.toggle('hidden');            
+            sectThree.classList.toggle('hidden');            
+        }
+
+        secondButton.onclick = function() {
+            sectOne.classList.toggle('hidden');            
+            sectTwo.classList.toggle('hidden');            
+        }
+
+        thirdButton.onclick = function() {
+            sectTwo.classList.toggle('hidden');            
+            sectThree.classList.toggle('hidden');            
+        }
+    </script>
 </body>
 </html>
