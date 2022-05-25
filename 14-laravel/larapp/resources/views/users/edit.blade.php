@@ -1,96 +1,83 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
 
-    <h1>Edit User</h1>
-    <a href="{{ url('users') }}">User Module</a>
+    <h1 class="text-center font-bold text-2xl mb-5 py-3 text-white bg-[#a43636]">Edit User</h1>
+    <div class="flex justify-center mb-5">
+        <a class="text-center text-red-700 font-bold border-2 border-[#943a19] py-2 px-5 rounded-lg hover:scale-105 transition-all" href="{{ url('users') }}">User Module</a>
+    </div>
     
-    <x-guest-layout>
-        <x-auth-card>
+    <section class="mb-10 w-[600px] mx-auto border-4 border-orange-900 rounded-2xl p-0 overflow-hidden bg-[#943a19]">
             
-            <x-slot name="logo">
-                <a href="/">
-                </a>
-            </x-slot>
-    
-            <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
-    
-            <header class="w-full font-semibold bg-emerald-600 text-white py-5 px-6 sm:rounded-md text-center">
-                {{ __('Add User') }}
-            </header>
-    
-            <form class="mt-5" method="POST" action="{{ url('users/'.$user->id) }}">
-                @csrf
-                @method('put')
+        <header class="w-12/12 m-0 font-semibold bg-orange-900 text-white py-5 px-6 text-center">
+            {{ __('Edit User') }}
+        </header>
 
-                <!-- Name -->
-                <div>
-                    <x-label for="fullname" :value="__('general.fullname')" />
-    
-                    <x-input id="fullname" class="block mt-1 w-full" type="text" name="fullname" value="{{old('fullname', $user->fullname)}}" required autofocus />
-                </div>
-    
-                <!-- Email Address -->
-                <div class="mt-4">
-                    <x-label for="email" :value="__('general.email')" />
-    
-                    <x-input id="email" class="block mt-1 w-full" type="email" name="email" value="{{old('email', $user->email)}}" required />
-                </div>
-    
-                <!-- Phone -->
-                <div class="mt-4">
-                    <x-label for="phone" :value="__('general.phone')" />
-    
-                    <x-input id="phone" class="block mt-1 w-full" type="number" name="phone" value="{{old('phone', $user->phone)}}" required />
-                </div>
-    
-                <!-- Date -->
-                <div class="mt-4">
-                    <x-label for="date" :value="__('general.birthdate')" />
-    
-                    <x-input id="date" class="block mt-1 w-full" type="date" name="birthday" value="{{old('birthday', $user->birthday)}}" required />
-                </div>
-    
-                <!-- Date -->
-                <div class="mt-4">
-                    <x-label for="gender" :value="__('general.gender')" />
-    
-                    <select name="gender" id="gender" class="block mt-1 w-full rounded-md">
-                        <option value="" @if(!old('gender', $user->gender)) selected @endif disabled>---</option>
-                        <option value="Male" @if(old('gender', $user->gender) == 'Male') selected @endif>Male</option>
-                        <option value="Female" @if(old('gender', $user->gender) == 'Female') selected @endif>Female</option>
-                    </select>
-                </div>
-    
-                <div class="mt-4">
-                    <x-label for="address" :value="__('general.address')" />
-    
-                    <x-input id="address" class="block mt-1 w-full" type="text" name="address" value="{{old('address', $user->address)}}" required />
-                </div>
+        <form class="p-8 pb-5" method="POST" action="{{ url('users/'.$user->id) }}">
+            @csrf
+            @method('put')
 
-                <div class="mt-4">
-                    <x-label for="role" :value="__('general.role')" />
-    
-                    <select name="role" id="role" class="block mt-1 w-full rounded-md">
-                        <option value="" @if(!old('role', $user->role)) selected @endif disabled>---</option>
-                        <option value="Admin" @if(old('role', $user->role) == 'Admin') selected @endif>Admin</option>
-                        <option value="Customer" @if(old('role', $user->role) == 'Customer') selected @endif>Customer</option>
-                    </select>
+            <!-- Name -->
+            <div>
+                <label class="text-white" for="fullname">{{ __('general.fullname') }}</label>
+                <input id="fullname" class="block mt-1 w-full rounded-md border-gray-400" type="text" name="fullname" value="{{old('fullname', $user->fullname)}}" required autofocus />
+            </div>
 
-                    @error('role')
-                        <p class="text-red-500 text-xs italic mt-4">
-                            {{ $message }}
-                        </p>
-                    @enderror
-                </div>
-    
-                
-                <x-button class="ml-4">
-                    {{ __('Edit') }}
-                </x-button>
-            </form>
-        </x-auth-card>
-    </x-guest-layout>
+            <!-- Email Address -->
+            <div class="mt-4">
+                <label class="text-white" for="email">{{ __('general.email') }}</label>
+                <input id="email" class="block mt-1 w-full rounded-md border-gray-400" type="email" name="email" value="{{old('email', $user->email)}}" required />
+            </div>
+
+            <!-- Phone -->
+            <div class="mt-4">
+                <label class="text-white" for="phone">{{ __('general.phone') }}</label>
+                <input id="phone" class="block mt-1 w-full rounded-md border-gray-400" type="number" name="phone" value="{{old('phone', $user->phone)}}" required />
+            </div>
+
+            <!-- Date -->
+            <div class="mt-4">
+                <label class="text-white" for="date">{{ __('general.birthdate') }}</label>
+                <input id="date" class="block mt-1 w-full rounded-md border-gray-400 cursor-pointer" type="date" name="birthday" value="{{old('birthday', $user->birthday)}}" required />
+            </div>
+
+            <!-- Gender -->
+            <div class="mt-4">
+                <label class="text-white" for="gender">{{ __('general.gender') }}</label>
+                <select name="gender" id="gender" class="block mt-1 w-full rounded-md border-gray-400 cursor-pointer">
+                    <option value="" @if(!old('gender', $user->gender)) selected @endif disabled>---</option>
+                    <option value="Male" @if(old('gender', $user->gender) == 'Male') selected @endif>Male</option>
+                    <option value="Female" @if(old('gender', $user->gender) == 'Female') selected @endif>Female</option>
+                </select>
+            </div>
+
+            <!-- Address -->
+            <div class="mt-4">
+                <label class="text-white" for="address">{{ __('general.address') }}</label>
+                <input id="address" class="block mt-1 w-full rounded-md border-gray-400" type="text" name="address" value="{{old('address', $user->address)}}" required />
+            </div>
+
+            <!-- Role -->
+            <div class="mt-4">
+                <label class="text-white" for="role">{{ __('general.role') }}</label>
+                <select name="role" id="role" class="block mt-1 w-full rounded-md border-gray-400 cursor-pointer">
+                    <option value="" @if(!old('role', $user->role)) selected @endif disabled>---</option>
+                    <option value="Admin" @if(old('role', $user->role) == 'Admin') selected @endif>Admin</option>
+                    <option value="Customer" @if(old('role', $user->role) == 'Customer') selected @endif>Customer</option>
+                </select>
+                @error('role')
+                    <p class="text-red-500 text-xs italic mt-4">
+                        {{ $message }}
+                    </p>
+                @enderror
+            </div>   
+
+            <!-- Edit Button -->
+            <div class="flex justify-center mt-5">
+                <button class="bg-orange-900 text-white text-center py-4 px-10 rounded-lg hover:bg-[#c54b22] transition-all">{{ __('Edit') }}</button>
+            </div> 
+
+        </form>
+    </section>
     
 @endsection

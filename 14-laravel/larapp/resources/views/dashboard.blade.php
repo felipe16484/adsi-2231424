@@ -1,4 +1,4 @@
-@extends('layouts.app2')
+@extends('layouts.app')
  
 @section('content')
 <main class="sm:container sm:mx-auto sm:mt-10">
@@ -18,7 +18,7 @@
  
             <div class="w-full p-6">
                 <a href="{{ url('users') }}" class="p-4 bg-blue-900 text-white">
-                    users Module
+                    Users Module
                 </a>
                 
                 <p class="text-gray-700 my-8">

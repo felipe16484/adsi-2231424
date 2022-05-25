@@ -1,37 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+ 
+    <title><?php echo e(config('app.name', 'Laravel')); ?></title>
+ 
+    <!-- Scripts -->
+    <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
+    
+    <!-- Styles -->
+    <link href="<?php echo e(mix('css/app.css')); ?>" rel="stylesheet">
+</head>
+<body class="bg-gray-200 h-screen antialiased leading-none font-sans">
+    <div id="app">
+        <header class="bg-red-900 py-6">
+            <div class="container mx-auto flex justify-between items-center px-6">
+                <div>
+                    <a href="<?php echo e(url('/')); ?>" class="text-lg font-semibold text-gray-100 no-underline">
+                        <?php echo e(config('app.name', 'Laravel')); ?>
 
-        <title><?php echo e(config('app.name', 'Laravel')); ?></title>
-
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="<?php echo e(asset('css/app.css')); ?>">
-
-        <!-- Scripts -->
-        <script src="<?php echo e(asset('js/app.js')); ?>" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    
+                    </a>
                 </div>
-            </header>
+                <nav class="space-x-4 text-gray-300 text-sm sm:text-base">
+                    <?php if(auth()->guard()->guest()): ?>
+                        <a class="no-underline hover:underline" href="<?php echo e(route('login')); ?>"><?php echo e(__('general.link-nav-login')); ?></a>
+                        <?php if(Route::has('register')): ?>
+                            <a class="no-underline hover:underline" href="<?php echo e(route('register')); ?>"><?php echo e(__('general.link-nav-register')); ?></a>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <span><?php echo e(Auth::user()->name); ?></span>
+ 
+                        <a href="<?php echo e(route('logout')); ?>"
+                           class="no-underline hover:underline"
+                           onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><?php echo e(__('general.nav-logout')); ?></a>
+                        <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="hidden">
+                            <?php echo e(csrf_field()); ?>
 
-            <!-- Page Content -->
-            <main>
-                
-            </main>
-        </div>
-    </body>
-</html>
-<?php /**PATH C:\Users\felip\Desktop\-\adsi-2231424\14-laravel\larapp\resources\views/layouts/app.blade.php ENDPATH**/ ?>
+                        </form>
+                    <?php endif; ?>
+                </nav>
+            </div>
+        </header>
+ 
+        <?php echo $__env->yieldContent('content'); ?>
+    </div>
+</body>
+</html><?php /**PATH C:\Users\felip\Desktop\-\adsi-2231424\14-laravel\larapp\resources\views/layouts/app.blade.php ENDPATH**/ ?>

@@ -18,7 +18,7 @@
  
             <div class="w-full p-6">
                 <a href="<?php echo e(url('users')); ?>" class="p-4 bg-blue-900 text-white">
-                    users Module
+                    Users Module
                 </a>
                 
                 <p class="text-gray-700 my-8">
@@ -29,4 +29,4 @@
     </div>
 </main>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app2', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\felip\Desktop\-\adsi-2231424\14-laravel\larapp\resources\views/dashboard.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\felip\Desktop\-\adsi-2231424\14-laravel\larapp\resources\views/dashboard.blade.php ENDPATH**/ ?>

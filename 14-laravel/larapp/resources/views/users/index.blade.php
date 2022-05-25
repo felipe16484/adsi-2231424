@@ -1,41 +1,45 @@
-@extends('layouts.app2')
+@extends('layouts.app')
 
 @section('content')
-    <h1 class="text-center my-10 font-bold text-2xl">Module Users</h1>
-    <hr>
-    <a href="{{ "users/create" }}" class="bg-emerald-600 text-white my-10 text-center rounded-xl p-4 block w-96 mx-auto">Add User</a>
+    <h1 class="text-center font-bold text-2xl mb-5 py-3 text-white bg-[#a43636]">Module Users</h1>
+    <div class="flex justify-center gap-3">
+        <a href="{{ "users/create" }}" class="text-center text-red-700 font-bold border-2 border-[#943a19] py-2 px-5 rounded-lg hover:scale-105 transition-all">Add User</a>
+        <a href="{{ "dashboard" }}" class="text-center text-red-700 font-bold border-2 border-[#943a19] py-2 px-5 rounded-lg hover:scale-105 transition-all">Dashboard</a>
+    </div>
+    
     @if(session('message'))
-        <p class="text-green-500 font-medium">
+        <p class="bg-green-500 w-[500px] mx-auto rounded-lg font-medium text-center mt-7 text-white py-2 px-3">
             {{ session('message') }}
         </p>
     @endif
-    <table class="table-fixed my-10 mx-auto">
-        <thead>
-            <tr>
-                <th>Fullname</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Actions</th>
+    
+    <table class="my-10 mx-auto text-gray-300 text-center rounded-2xl overflow-hidden border-orange-800">
+        <thead class="text-xs text-white uppercase bg-orange-800">
+            <tr class="rounded-">
+                <th class="px-6 py-3">Fullname</th>
+                <th class="px-6 py-3">Email</th>
+                <th class="px-6 py-3">Role</th>
+                <th class="px-6 py-3">Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->fullname }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->role }}</td>
-                    <td class="flex">
-                        <a href="{{ url('users/'.$user->id) }}">
+                <tr class="border-b border-white bg-[#772817]">
+                    <td class="px-6 py-2">{{ $user->fullname }}</td>
+                    <td class="px-6 py-2">{{ $user->email }}</td>
+                    <td class="px-6 py-2">{{ $user->role }}</td>
+                    <td class="flex gap-3 px-6 py-2">
+                        <a class="hover:scale-125 transition-all" href="{{ url('users/'.$user->id) }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </a>
-                        <a href="{{ url('users/'.$user->id.'/edit') }}">
+                        <a class="hover:scale-125 transition-all" href="{{ url('users/'.$user->id.'/edit') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                             </svg>
                         </a>
-                        <form action="{{ url('users/'.$user->id) }}" method="POST">
+                        <form class="hover:scale-125 transition-all" action="{{ url('users/'.$user->id) }}" method="POST">
                             @csrf
                             @method('delete')
                             <button>
